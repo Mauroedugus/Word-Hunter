@@ -1,0 +1,110 @@
+
+{
+  "phases": {
+    "colors": [
+      {
+        "image": "/assets/images/colors/purple.png",
+        "correct": "purple",
+        "options": ["purple", "blue", "pink"]
+      },
+      {
+        "image": "/assets/images/colors/orange.png",
+        "correct": "orange",
+        "options": ["orange", "red", "yellow"]
+      },
+      {
+        "image": "/assets/images/colors/pink.png",
+        "correct": "pink",
+        "options": ["pink", "purple", "white"]
+      },
+      {
+        "image": "/assets/images/colors/gray.png",
+        "correct": "gray",
+        "options": ["gray", "black", "white"]
+      },
+      {
+        "image": "/assets/images/colors/white.png",
+        "correct": "white",
+        "options": ["white", "yellow", "gray"]
+      },
+      {
+        "image": "/assets/images/colors/brown.png",
+        "correct": "brown",
+        "options": ["brown", "black", "gray"]
+      },
+      {
+        "image": "/assets/images/colors/light_blue.png",
+        "correct": "light blue",
+        "options": ["light blue", "blue", "cyan"]
+      },
+      {
+        "image": "/assets/images/colors/gold.png",
+        "correct": "gold",
+        "options": ["gold", "yellow", "orange"]
+      },
+      {
+        "image": "/assets/images/colors/silver.png",
+        "correct": "silver",
+        "options": ["silver", "gray", "white"]
+      },
+      {
+        "image": "/assets/images/colors/beige.png",
+        "correct": "beige",
+        "options": ["beige", "white", "brown"]
+      }
+    ],
+    "animals": [
+      {
+        "image": "/assets/images/animals/bird.png",
+        "correct": "bird",
+        "options": ["bird", "bat", "butterfly"]
+      },
+      {
+        "image": "/assets/images/animals/horse.png",
+        "correct": "horse",
+        "options": ["horse", "donkey", "cow"]
+      },
+      {
+        "image": "/assets/images/animals/monkey.png",
+        "correct": "monkey",
+        "options": ["monkey", "gorilla", "chimpanzee"]
+      },
+      {
+        "image": "/assets/images/animals/penguin.png",
+        "correct": "penguin",
+        "options": ["penguin", "duck", "seal"]
+      },
+      {
+        "image": "/assets/images/animals/rabbit.png",
+        "correct": "rabbit",
+        "options": ["rabbit", "cat", "hamster"]
+      },
+      {
+        "image": "/assets/images/animals/tiger.png",
+        "correct": "tiger",
+        "options": ["tiger", "lion", "leopard"]
+      },
+      {
+        "image": "/assets/images/animals/elephant.png",
+        "correct": "elephant",
+        "options": ["elephant", "hippo", "rhino"]
+      },
+      {
+        "image": "/assets/images/animals/cow.png",
+        "correct": "cow",
+        "options": ["cow", "horse", "goat"]
+      },
+      {
+        "image": "/assets/images/animals/frog.png",
+        "correct": "frog",
+        "options": ["frog", "toad", "fish"]
+      },
+      {
+        "image": "/assets/images/animals/duck.png",
+        "correct": "duck",
+        "options": ["duck", "chicken", "goose"]
+      }
+    ]
+  }
+}
+

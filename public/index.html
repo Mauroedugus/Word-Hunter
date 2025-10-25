@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>English Word Hunter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- Title Screen -->
+    <section id="titleScreen" class="screen">
+      <div class="content card">
+        <h1>WORD HUNTER</h1>
+        <p class="subtitle">Aprenda inglês de forma divertida</p>
+        <div class="title-actions">
+          <button id="btnStart">COMEÇAR</button>
+          <button id="btnHow">COMO JOGAR</button>
+        </div>
+        <small>Feito por você — versão DOM</small>
+      </div>
+    </section>
+
+    <!-- How to Play -->
+    <section id="howScreen" class="screen hidden">
+      <div class="content card">
+        <h2>Como Jogar</h2>
+        <ol>
+          <li>Escolha um avatar e digite seu nome.</li>
+          <li>No mapa, selecione a fase disponível.</li>
+          <li>Responda X perguntas por fase; acertos dão pontos, erros tiram vidas.</li>
+          <li>Alcance a pontuação necessária para liberar a próxima fase.</li>
+        </ol>
+        <button id="btnBackFromHow">Voltar</button>
+      </div>
+    </section>
+
+    <!-- Character selection -->
+    <section id="charScreen" class="screen hidden">
+      <div class="content card">
+        <h2>Escolha seu Avatar e Nome</h2>
+        <div class="avatar-row">
+          <div class="avatar" data-key="avatar_boy">
+            <img src="/assets/avatars/avatar_boy.jpg" alt="boy" />
+            <span>Menino</span>
+          </div>
+          <div class="avatar" data-key="avatar_girl">
+            <img src="/assets/avatars/avatar_girl.jpg" alt="girl" />
+            <span>Menina</span>
+          </div>
+        </div>
+        <input id="playerName" type="text" placeholder="Digite seu nome..." />
+        <div class="row">
+          <button id="btnCharContinue" class="primary disabled">Continuar</button>
+          <button id="btnCharBack">Voltar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map -->
+    <section id="mapScreen" class="screen hidden">
+      <div class="content card map-card">
+        <h2>Mapa de Fases</h2>
+        <div class="map-top-row">
+          <div class="player-info">
+            <img id="playerAvatarSmall" src="/assets/avatars/avatar_boy.jpg" alt="avatar" />
+            <div>
+              <div id="playerNameLabel">Nome</div>
+              <div id="playerLevelLabel">Nível 1</div>
+            </div>
+          </div>
+          <div class="hud">
+            <div>Pontos: <span id="hudScore">0</span></div>
+            <div>Vidas: <span id="hudLives">3</span></div>
+          </div>
+        </div>
+
+        <div id="mapArea" class="map-area">
+          <!-- Zones will be injected here -->
+        </div>
+
+        <div class="row">
+          <button id="btnMapBack">Voltar ao Menu</button>
+          <button id="btnOpenRanking">Ranking</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Game -->
+    <section id="gameScreen" class="screen hidden">
+      <div class="content card game-card">
+        <div class="game-topbar">
+          <div>Pontos: <span id="gameScore">0</span></div>
+          <div>Vidas: <span id="gameLives">3</span></div>
+          <div>Tempo: <span id="gameTimer">0</span>s</div>
+        </div>
+
+        <div id="questionArea" class="question-area">
+          <!-- question rendered here -->
+        </div>
+
+        <div id="optionsArea" class="options-area">
+          <!-- options rendered here -->
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+
+        <div class="row">
+          <button id="btnQuitToMap">Sair (Mapa)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Result / Phase cleared -->
+    <section id="resultScreen" class="screen hidden">
+      <div class="content card">
+        <h2>Resultado da Fase</h2>
+        <div id="resultSummary"></div>
+        <div class="row">
+          <button id="btnNextPhase" class="primary">Ir para próxima fase</button>
+          <button id="btnResultToMap">Voltar para o mapa</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ranking -->
+    <section id="rankingScreen" class="screen hidden">
+      <div class="content card">
+        <h2>Ranking Local</h2>
+        <ol id="rankingList"></ol>
+        <div class="row">
+          <button id="btnRankingBack">Voltar</button>
+          <button id="btnClearRanking">Limpar Ranking</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

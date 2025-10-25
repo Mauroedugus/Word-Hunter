@@ -1,0 +1,93 @@
+:root{
+    --bg: #071023;
+    --card: #0f1724;
+    --accent: #00b2e3;
+    --accent2: #4fd1c5;
+    --muted: #9aa4b2;
+    --glass: rgba(255,255,255,0.03);
+  }
+  *{box-sizing:border-box}
+  html,body,#app{height:100%}
+  body{
+    margin:0;
+    font-family: Inter, system-ui, Arial;
+    background: linear-gradient(180deg,#041022 0%, #071023 100%);
+    color:#e6eef6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  .screen{
+    width:100%;
+    max-width:1100px;
+    background:var(--glass);
+    border-radius:12px;
+    padding:20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  }
+  .hidden{display:none}
+  
+  .centerCard{display:flex;flex-direction:column;align-items:center;gap:16px}
+  .centerCard.narrow{max-width:720px;margin:0 auto}
+  
+  h1{font-size:48px;margin:8px 0}
+  h2{font-size:28px;margin:6px 0}
+  .muted{color:var(--muted)}
+  
+  .btnRow{display:flex;gap:12px;margin-top:8px}
+  button{padding:12px 18px;border-radius:12px;border:0;cursor:pointer;font-weight:700}
+  button.primary{background:linear-gradient(180deg,var(--accent),var(--accent2));color:#022;box-shadow:0 6px 18px rgba(79,209,197,0.08)}
+  button.secondary{background:transparent;border:2px solid rgba(255,255,255,0.06);color:#e6eef6}
+  button.disabled{opacity:0.35;pointer-events:none}
+  
+  .avatarsRow{display:flex;gap:24px;align-items:center;justify-content:center;margin:12px 0}
+  .avatarOption{display:flex;flex-direction:column;align-items:center;gap:8px;padding:6px;border-radius:10px;cursor:pointer;transition:transform .15s, box-shadow .15s}
+  .avatarOption img{width:120px;height:120px;object-fit:contain;border-radius:12px}
+  .avatarOption:hover{transform:translateY(-6px);box-shadow:0 8px 24px rgba(0,0,0,0.6)}
+  .avatarOption.selected{outline:3px solid rgba(79,209,197,0.3);transform:scale(1.03)}
+  
+  input#playerName{padding:10px 12px;border-radius:10px;border:2px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:inherit;width:260px;text-align:center}
+  
+  .mapHeader{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+  .mapAvatar{width:70px;height:70px;border-radius:10px;object-fit:cover}
+  .hud{display:flex;gap:18px;align-items:center}
+  
+  .mapWrap{position:relative;width:100%;height:420px;border-radius:12px;overflow:hidden;background:rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center}
+  .mapImage{max-width:100%;max-height:100%;object-fit:cover;opacity:0.9}
+  .mapNodes{position:absolute;inset:0;pointer-events:none}
+  
+  /* nodes (levels) */
+  .mapNode{
+    position:absolute;pointer-events:auto;
+    width:84px;height:84px;border-radius:999px;
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:transform .15s, box-shadow .15s;
+    font-weight:700;
+    color:#022;
+  }
+  .mapNode.locked{background:rgba(255,255,255,0.06);color:var(--muted);pointer-events:auto;opacity:0.6}
+  .mapNode.unlocked{background:linear-gradient(180deg,var(--accent),var(--accent2));box-shadow:0 8px 18px rgba(0,0,0,0.6)}
+  .mapNode:hover{transform:translateY(-6px)}
+  
+  /* game */
+  .gameHeader{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:18px}
+  .questionArea{display:flex;justify-content:center;align-items:center;min-height:220px}
+  .optionsArea{display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap}
+  
+  .optionCard{
+    padding:12px;border-radius:12px;min-width:200px;min-height:120px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;user-select:none;background:rgba(255,255,255,0.03);transition:transform .12s, box-shadow .12s;
+  }
+  .optionCard:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+  .optionCard.correct{background:linear-gradient(90deg,#5cb85c33,#5cb85c20)}
+  .optionCard.wrong{background:linear-gradient(90deg,#ff000033,#ff000020)}
+  
+  .optionCard img{max-width:160px;max-height:110px;object-fit:contain;border-radius:8px}
+  
+  @media (max-width:700px){
+    .mapWrap{height:320px}
+    .optionCard{min-width:140px;min-height:90px}
+    .avatarOption img{width:86px;height:86px}
+  }
+  

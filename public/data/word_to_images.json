@@ -1,0 +1,189 @@
+{
+  "phases": {
+    "colors": [
+      {
+        "word": "red",
+        "correct": "/assets/images/colors/red.png",
+        "options": [
+          "/assets/images/colors/red.png",
+          "/assets/images/colors/blue.png",
+          "/assets/images/colors/green.png"
+        ]
+      },
+      {
+        "word": "blue",
+        "correct": "/assets/images/colors/blue.png",
+        "options": [
+          "/assets/images/colors/yellow.png",
+          "/assets/images/colors/blue.png",
+          "/assets/images/colors/orange.png"
+        ]
+      },
+      {
+        "word": "green",
+        "correct": "/assets/images/colors/green.png",
+        "options": [
+          "/assets/images/colors/purple.png",
+          "/assets/images/colors/green.png",
+          "/assets/images/colors/pink.png"
+        ]
+      },
+      {
+        "word": "yellow",
+        "correct": "/assets/images/colors/yellow.png",
+        "options": [
+          "/assets/images/colors/yellow.png",
+          "/assets/images/colors/red.png",
+          "/assets/images/colors/blue.png"
+        ]
+      },
+      {
+        "word": "black",
+        "correct": "/assets/images/colors/black.png",
+        "options": [
+          "/assets/images/colors/white.png",
+          "/assets/images/colors/black.png",
+          "/assets/images/colors/gray.png"
+        ]
+      },
+      {
+        "word": "brown",
+        "correct": "/assets/images/colors/brown.png",
+        "options": [
+          "/assets/images/colors/brown.png",
+          "/assets/images/colors/black.png",
+          "/assets/images/colors/gray.png"
+        ]
+      },
+      {
+        "word": "light blue",
+        "correct": "/assets/images/colors/light_blue.png",
+        "options": [
+          "/assets/images/colors/light_blue.png",
+          "/assets/images/colors/blue.png",
+          "/assets/images/colors/cyan.png"
+        ]
+      },
+      {
+        "word": "gold",
+        "correct": "/assets/images/colors/gold.png",
+        "options": [
+          "/assets/images/colors/gold.png",
+          "/assets/images/colors/yellow.png",
+          "/assets/images/colors/orange.png"
+        ]
+      },
+      {
+        "word": "silver",
+        "correct": "/assets/images/colors/silver.png",
+        "options": [
+          "/assets/images/colors/silver.png",
+          "/assets/images/colors/white.png",
+          "/assets/images/colors/gray.png"
+        ]
+      },
+      {
+        "word": "beige",
+        "correct": "/assets/images/colors/beige.png",
+        "options": [
+          "/assets/images/colors/beige.png",
+          "/assets/images/colors/white.png",
+          "/assets/images/colors/brown.png"
+        ]
+      }
+    ],
+    "animals": [
+      {
+        "word": "dog",
+        "correct": "/assets/images/animals/dog.png",
+        "options": [
+          "/assets/images/animals/dog.png",
+          "/assets/images/animals/cat.png",
+          "/assets/images/animals/horse.png"
+        ]
+      },
+      {
+        "word": "cat",
+        "correct": "/assets/images/animals/cat.png",
+        "options": [
+          "/assets/images/animals/rabbit.png",
+          "/assets/images/animals/cat.png",
+          "/assets/images/animals/bird.png"
+        ]
+      },
+      {
+        "word": "lion",
+        "correct": "/assets/images/animals/lion.png",
+        "options": [
+          "/assets/images/animals/tiger.png",
+          "/assets/images/animals/lion.png",
+          "/assets/images/animals/elephant.png"
+        ]
+      },
+      {
+        "word": "elephant",
+        "correct": "/assets/images/animals/elephant.png",
+        "options": [
+          "/assets/images/animals/rhino.png",
+          "/assets/images/animals/elephant.png",
+          "/assets/images/animals/hippo.png"
+        ]
+      },
+      {
+        "word": "fish",
+        "correct": "/assets/images/animals/fish.png",
+        "options": [
+          "/assets/images/animals/frog.png",
+          "/assets/images/animals/fish.png",
+          "/assets/images/animals/bird.png"
+        ]
+      },
+      {
+        "word": "tiger",
+        "correct": "/assets/images/animals/tiger.png",
+        "options": [
+          "/assets/images/animals/tiger.png",
+          "/assets/images/animals/lion.png",
+          "/assets/images/animals/leopard.png"
+        ]
+      },
+      {
+        "word": "cow",
+        "correct": "/assets/images/animals/cow.png",
+        "options": [
+          "/assets/images/animals/cow.png",
+          "/assets/images/animals/horse.png",
+          "/assets/images/animals/goat.png"
+        ]
+      },
+      {
+        "word": "frog",
+        "correct": "/assets/images/animals/frog.png",
+        "options": [
+          "/assets/images/animals/frog.png",
+          "/assets/images/animals/toad.png",
+          "/assets/images/animals/fish.png"
+        ]
+      },
+      {
+        "word": "duck",
+        "correct": "/assets/images/animals/duck.png",
+        "options": [
+          "/assets/images/animals/duck.png",
+          "/assets/images/animals/chicken.png",
+          "/assets/images/animals/goose.png"
+        ]
+      },
+      {
+        "word": "bear",
+        "correct": "/assets/images/animals/bear.png",
+        "options": [
+          "/assets/images/animals/bear.png",
+          "/assets/images/animals/dog.png",
+          "/assets/images/animals/lion.png"
+        ]
+      }
+    ]
+  }
+}
+

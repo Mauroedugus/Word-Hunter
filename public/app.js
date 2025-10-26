@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
     // SCREENS
     const SCREENS = {
         TITLE: 'titleScreen',
@@ -382,3 +382,4 @@ document.addEventListener('DOMContentLoaded', () => {
         showScreen(SCREENS.TITLE);
     })();
 });
+ */

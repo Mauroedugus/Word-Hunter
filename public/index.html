@@ -11,7 +11,7 @@
 
     <!-- Title Screen -->
     <section id="titleScreen" class="screen">
-      <div class="content card">
+      <div id="titleCard" class="content card">
         <h1>WORD HUNTER</h1>
         <p class="subtitle">Aprenda inglês de forma divertida</p>
         <div class="title-actions">
@@ -41,14 +41,32 @@
       <div class="content card">
         <h2>Escolha seu Avatar e Nome</h2>
         <div class="avatar-row">
-          <div class="avatar" data-key="avatar_boy">
-            <img src="/assets/avatars/avatar_boy.jpg" alt="boy" />
-            <span>Menino</span>
+          <button id="btnAvatarPrev">◀</button>
+          <div class="avatar" data-key="gustavo">
+            <img src="/assets/avatars/gustavo.png" alt="gustavo" />
           </div>
-          <div class="avatar" data-key="avatar_girl">
-            <img src="/assets/avatars/avatar_girl.jpg" alt="girl" />
-            <span>Menina</span>
+          <div class="avatar" data-key="Marcia">
+            <img src="/assets/avatars/Márcia.png" alt="Marcia" />
           </div>
+          <div class="avatar" data-key="PedroTakamura">
+            <img src="/assets/avatars/PedroTakamura.png" alt="PedroTakamura" />
+          </div>
+          <div class="avatar" data-key="Robo">
+            <img src="/assets/avatars/Robo.png" alt="Robo" />
+          </div>
+          <div class="avatar" data-key="Yoshida">
+            <img src="/assets/avatars/Yoshida.png" alt="Yoshida" />
+          </div>
+          <div class="avatar" data-key="Ete">
+            <img src="/assets/avatars/Ete.png" alt="Ete" />
+          </div>
+          <div class="avatar" data-key="emma">
+            <img src="/assets/avatars/emma.png" alt="emma" />
+          </div>
+          <div class="avatar" data-key="Dinosauro">
+            <img src="/assets/avatars/Dinosauro.png" alt="Dinosauro" />
+          </div>
+          <button id="btnAvatarNext">▶</button>
         </div>
         <input id="playerName" type="text" placeholder="Digite seu nome..." />
         <div class="row">
@@ -64,7 +82,7 @@
         <h2>Mapa de Fases</h2>
         <div class="map-top-row">
           <div class="player-info">
-            <img id="playerAvatarSmall" src="/assets/avatars/avatar_boy.jpg" alt="avatar" />
+            <img id="playerAvatarSmall" class="mapAvatar" src="/assets/avatars/avatar_boy.jpg" alt="avatar" />
             <div>
               <div id="playerNameLabel">Nome</div>
               <div id="playerLevelLabel">Nível 1</div>
@@ -91,10 +109,13 @@
     <section id="gameScreen" class="screen hidden">
       <div class="content card game-card">
         <div class="game-topbar">
-          <div>Pontos: <span id="gameScore">0</span></div>
-          <div>Vidas: <span id="gameLives">3</span></div>
-          <div>Tempo: <span id="gameTimer">0</span>s</div>
+          <div id="levelGameTopbar">Nivel: <span id="gameLevel">1</span></div>
+          <div id="scoreGameTopbar">Pontos: <span id="gameScore">0</span></div>
+          <div id="timerGameTopbar">Tempo: <span id="gameTimer">0</span>s</div>
+          <div id="livesGameTopbar">Vidas: <span id="gameLives">3</span></div>
         </div>
+
+        <div id="instructionArea"></div>
 
         <div id="questionArea" class="question-area">
           <!-- question rendered here -->
@@ -138,6 +159,6 @@
 
   </div>
 
-  <script src="app.js"></script>
+  <script type="module" src="/js/main.js"></script>
 </body>
 </html>

@@ -18,6 +18,43 @@
     justify-content:center;
     padding:24px;
   }
+  #titleScreen {
+    margin: 70% 0 80% 0;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .title-actions {
+    display: flex;
+    justify-content: space-evenly; 
+    width: 100%; 
+    margin-block: 16px;
+  }
+  .avatar img{
+    width: 350px;
+  }
+  .avatar-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .avatar-row .avatar {
+    display: none; /* esconde todos por padrão */
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .avatar-row .avatar.selected {
+    display: flex; /* mostra apenas o selecionado */
+  }
+
+  .row {
+    margin-block: 16px;
+  }
+  
   .screen{
     width:100%;
     max-width:1100px;
@@ -50,7 +87,7 @@
   input#playerName{padding:10px 12px;border-radius:10px;border:2px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:inherit;width:260px;text-align:center}
   
   .mapHeader{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-  .mapAvatar{width:70px;height:70px;border-radius:10px;object-fit:cover}
+  .mapAvatar{width:200px;height:200px;border-radius:10px;object-fit:cover}
   .hud{display:flex;gap:18px;align-items:center}
   
   .mapWrap{position:relative;width:100%;height:420px;border-radius:12px;overflow:hidden;background:rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center}
@@ -71,6 +108,46 @@
   .mapNode:hover{transform:translateY(-6px)}
   
   /* game */
+  #questionArea {
+    margin-block: 60px 30px;
+  }
+  #instructionArea{
+    margin-top: 50px;
+  }
+  #optionsArea {
+    display: flex;
+  }
+  .game-topbar {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .game-topbar div{
+    margin: 16px 16px 16px 16px;
+    position: absolute;
+    top: 0%;
+  }
+  #levelGameTopbar {
+    left: 5%;
+  }
+  #scoreGameTopbar {
+    left: 15%;
+  }
+  #timerGameTopbar {
+    left: 45%;
+  }
+  #livesGameTopbar {
+    left: 85%;
+  }
+  #gameScreen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .optionCard {
+    margin: 20px;
+  }
   .gameHeader{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:18px}
   .questionArea{display:flex;justify-content:center;align-items:center;min-height:220px}
   .optionsArea{display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap}

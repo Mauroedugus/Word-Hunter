@@ -11,6 +11,8 @@ const LIVES_DEFAULT = 3;
 
 let imageToWords, wordToImages, gameState, questionTimer;
 
+export const getGameState = () => gameState;
+
 export async function loadData() {
   const [r1, r2] = await Promise.all([
     fetch('data/image_to_words.json').then(r => r.json()),
@@ -26,8 +28,10 @@ export function startLevel(levelNumber, theme, player) {
     theme,
     questionCount: 0,
     consecutiveCorrect: 0,
-    lives: LIVES_DEFAULT,
+    lives: player.lives,
     score: player.score,
+    initialLives: player.lives,
+    initialScore: player.score,
     requiredToUnlock: 400 * levelNumber
   };
   runNextQuestion(player);
@@ -96,8 +100,6 @@ function runNextQuestion(player) {
   }, 300); // espera o fade-out terminar
 }
 
-
-
 function renderQuestion(q, player) {
   const qa = $('questionArea');
   const oa = $('optionsArea');
@@ -163,10 +165,12 @@ function handleAnswer(selected, correct, buttonEl, q, player) {
     player.lives = gameState.lives;
     if (buttonEl) buttonEl.classList.add('wrong');
   }
+  player.lives = Math.max(0, gameState.lives);
+  gameState.lives = player.lives;
   savePlayer(player);
   renderHUD();
 
-  if (gameState.lives <= 0) return showScreen(SCREENS.MAP);
+  if (gameState.lives <= 0) return triggerGameOver(player);
 
   setTimeout(() => runNextQuestion(player), 2200);
 }
@@ -206,4 +210,13 @@ export function nextLevelByResult(player) {
   };
 
 };
+
+function triggerGameOver(player) {
+  clearTimer();
+  $('gameOverScore').textContent = player.score; 
+  player.lives = LIVES_DEFAULT;
+  player.score = gameState.initialScore;
+  savePlayer(player);
+  showScreen(SCREENS.GAME_OVER);
+}
 

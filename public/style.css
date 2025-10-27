@@ -116,6 +116,11 @@
   #questionArea {
     margin-block: 60px 30px;
   }
+  #questionArea img {
+    max-width: 100%; 
+    max-height: 280px;   
+    object-fit: contain; 
+}
   #instructionArea{
     margin-top: 50px;
   }
@@ -150,6 +155,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  #gameScreen.correct{background:linear-gradient(90deg,#5cb85c33,#5cb85c20)}
+  #gameScreen.wrong{background:linear-gradient(90deg,#ff000033,#ff000020)}
   .optionCard {
     margin: 20px;
   }
@@ -209,7 +216,31 @@
     opacity: 1;
   }
   
+#rankingList li {
+  display: flex;
+  align-items: center; 
+  font-size: 1.1em;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
 
+#rankingList li:last-child {
+  border-bottom: none;
+}
+
+.ranking-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  margin-right: 15px; 
+  object-fit: cover;
+}
+
+.ranking-position {
+  min-width: 30px; 
+  font-weight: bold;
+  color: #555;
+}
 
   
   

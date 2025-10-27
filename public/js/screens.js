@@ -7,7 +7,8 @@ export const SCREENS = {
   MAP: 'mapScreen',
   GAME: 'gameScreen',
   RESULT: 'resultScreen',
-  RANKING: 'rankingScreen'
+  RANKING: 'rankingScreen',
+  GAME_OVER: 'gameOverScreen'
 };
 
 export function showScreen(screenId, fade = true) {

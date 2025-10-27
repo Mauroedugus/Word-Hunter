@@ -1,7 +1,7 @@
 import { updateRanking } from './ranking.js';
 
 const STORAGE_KEY = 'ewh_player_v1';
-const LIVES_DEFAULT = 3;
+export const LIVES_DEFAULT = 3;
 
 export function loadPlayer() {
   const raw = localStorage.getItem(STORAGE_KEY);

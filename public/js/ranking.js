@@ -21,9 +21,10 @@ export function updateRanking(player) {
   if (playerIndex > -1) {
     if (player.score > ranking[playerIndex].score) {
       ranking[playerIndex].score = player.score;
+      ranking[playerIndex].avatar = player.avatar;
     }
   } else {
-    ranking.push({ name: player.name, score: player.score });
+    ranking.push({ name: player.name, score: player.score, avatar: player.avatar });
   }
 
   // Ordena por maior pontuação e limita o número de entradas
@@ -48,7 +49,13 @@ export function renderRanking() {
 
   ranking.forEach((player, index) => {
     const li = document.createElement('li');
-    li.innerHTML = `<span>${index + 1}º</span> <strong>${player.name}</strong> - ${player.score} pontos`;
+    const avatarImg = `<img src="/assets/avatars/${player.avatar}.png" class="ranking-avatar" alt="Avatar">`;
+    li.innerHTML = `
+      ${avatarImg}
+      <span class="ranking-position">${index + 1}º</span> 
+      <strong>${player.name}</strong> 
+      <span>- ${player.score} pontos</span>
+    `;
     listEl.appendChild(li);
   });
 }

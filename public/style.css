@@ -10,7 +10,7 @@
   html,body,#app{height:100%}
   body {
     margin: 0;
-    font-family: Inter, system-ui, Arial;
+    font-family: 'Fredoka', system-ui, Arial, sans-serif;
     background: 
       linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.25)),
       url("/assets/images/background.png") no-repeat center center fixed;
@@ -155,8 +155,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  #gameScreen.correct{background:linear-gradient(90deg,#5cb85c33,#5cb85c20)}
-  #gameScreen.wrong{background:linear-gradient(90deg,#ff000033,#ff000020)}
+
+  #gameScreen.correct{
+    animation: pulseCorrect 0.5s ease-out; /* MUDANÇA: Duração aumentada para 0.5s */
+  }
+  #gameScreen.wrong{
+    animation: shakeSubtle 0.3s ease-in-out;
+  }
   .optionCard {
     margin: 20px;
   }
@@ -202,19 +207,18 @@
     from { opacity: 1; }
     to   { opacity: 0; }
   }
-  /* Transição suave entre perguntas */
+
+  /* CORREÇÃO DO BUG 1: Transição suave entre perguntas */
   .question-area, .options-area {
     opacity: 1;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease; /* A transição faz o fade-in/out */
   }
   
   .fade-out-question {
-    opacity: 0;
+    opacity: 0; /* JS adiciona isso para sumir */
   }
   
-  .fade-in-question {
-    opacity: 1;
-  }
+  /* .fade-in-question { ... } <-- REMOVIDA */
   
 #rankingList li {
   display: flex;
@@ -242,5 +246,56 @@
   color: #555;
 }
 
-  
-  
+
+/* --- Estilos de Feedback e Animações --- */
+.feedback {
+  min-height: 24px; 
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-top: 16px;
+  position: relative; 
+  /* MUDANÇA: Animação removida da classe base */
+}
+.feedback.correct {
+  color: var(--accent2);
+  text-shadow: 0 0 8px rgba(79, 209, 197, 0.5);
+  animation: feedbackPop 0.5s ease-out; /* MUDANÇA: Animação movida para cá */
+}
+.feedback.wrong {
+  color: #ff6b6b;
+  text-shadow: 0 0 8px rgba(255, 107, 107, 0.5);
+  animation: feedbackPop 0.5s ease-out; /* MUDANÇA: Animação movida para cá */
+}
+
+/* --- Keyframes para as Animações --- */
+
+/* Animação de tremedeira (OK) */
+@keyframes shakeSubtle {
+  0%, 100% { transform: translate(-50%, -50%); }
+  25% { transform: translate(-50.5%, -50%); }
+  50% { transform: translate(-49.5%, -50%); }
+  75% { transform: translate(-50.5%, -50%); }
+}
+
+/* MUDANÇA (BUG 2): Animação de "glow" para acerto */
+@keyframes pulseCorrect {
+  0% { 
+    transform: translate(-50%, -50%) scale(1); 
+    box-shadow: 0 0 0px rgba(79, 209, 197, 0); /* accent2 color, invisível */
+  }
+  50% { 
+    transform: translate(-50%, -50%) scale(1.005); 
+    box-shadow: 0 0 30px rgba(79, 209, 197, 0.4); /* Brilho verde! */
+  }
+  100% { 
+    transform: translate(-50%, -50%) scale(1); 
+    box-shadow: 0 0 0px rgba(79, 209, 197, 0); /* Volta ao normal */
+  }
+}
+
+/* Animação para o texto do feedback (OK) */
+@keyframes feedbackPop {
+  0% { opacity: 0; transform: translateY(10px) scale(0.8); }
+  50% { opacity: 1; transform: translateY(0) scale(1.1); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}

@@ -214,6 +214,9 @@ export function nextLevelByResult(player) {
 function triggerGameOver(player) {
   clearTimer();
   $('gameOverScore').textContent = player.score; 
+  player.lives = LIVES_DEFAULT;
+  player.score = gameState.initialScore;
+  savePlayer(player);
   showScreen(SCREENS.GAME_OVER);
 }
 

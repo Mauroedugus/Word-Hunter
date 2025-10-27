@@ -1,5 +1,5 @@
 // main.js
-import { loadPlayer, savePlayer, resetForNewGame, LIVES_DEFAULT } from './player.js';
+import { loadPlayer, savePlayer, resetForNewGame } from './player.js';
 import { showScreen, SCREENS } from './screens.js';
 import { renderMap, MAP_LEVELS } from './map.js';
 import { loadData, nextLevelByResult, getGameState, startLevel } from './game.js';
@@ -89,17 +89,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     $('btnRetryLevel').addEventListener('click', () => {
         const lastState = getGameState();
         const levelData = MAP_LEVELS.find(lv => lv.level === lastState.level);
-        if (levelData) {
-            player.score = lastState.initialScore;
-            player.lives = LIVES_DEFAULT;
-            startLevel(levelData.level, levelData.theme, player);
-        }
+        if (levelData) { startLevel(levelData.level, levelData.theme, player); }
     });
 
     $('btnGameOverToTitle').addEventListener('click', () => {
-        const lastState = getGameState();
-        player.score = lastState.initialScore;
-        player.lives = LIVES_DEFAULT;
         showScreen(SCREENS.TITLE);
     });
 

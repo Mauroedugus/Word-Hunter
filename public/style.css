@@ -155,6 +155,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  #gameScreen.correct{background:linear-gradient(90deg,#5cb85c33,#5cb85c20)}
+  #gameScreen.wrong{background:linear-gradient(90deg,#ff000033,#ff000020)}
   .optionCard {
     margin: 20px;
   }

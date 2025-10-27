@@ -8,16 +8,21 @@
   }
   *{box-sizing:border-box}
   html,body,#app{height:100%}
-  body{
-    margin:0;
+  body {
+    margin: 0;
     font-family: Inter, system-ui, Arial;
-    background: linear-gradient(180deg,#041022 0%, #071023 100%);
-    color:#e6eef6;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:24px;
+    background: 
+      linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.25)),
+      url("/assets/images/background.png") no-repeat center center fixed;
+    background-size: cover;
+    color: #e6eef6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    min-height: 100vh;
   }
+
   #titleScreen {
     margin: 70% 0 80% 0;
   }
@@ -33,7 +38,7 @@
     margin-block: 16px;
   }
   .avatar img{
-    width: 350px;
+    width: 300px;
   }
   .avatar-row {
     display: flex;
@@ -167,4 +172,44 @@
     .optionCard{min-width:140px;min-height:90px}
     .avatarOption img{width:86px;height:86px}
   }
+  
+  /* Transição suave entre telas */
+  .hidden {
+    display: none;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.3s ease forwards;
+  }
+  
+  .fade-out {
+    animation: fadeOut 0.3s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+  /* Transição suave entre perguntas */
+  .question-area, .options-area {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .fade-out-question {
+    opacity: 0;
+  }
+  
+  .fade-in-question {
+    opacity: 1;
+  }
+  
+
+
+  
   

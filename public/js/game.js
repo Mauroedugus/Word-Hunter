@@ -58,13 +58,45 @@ function pickRandomQuestion(theme) {
 
 function runNextQuestion(player) {
   if (gameState.questionCount >= QUESTIONS_PER_PHASE) return endPhase(player);
+
   const q = pickRandomQuestion(gameState.theme);
   if (!q) return showScreen(SCREENS.MAP);
-  renderQuestion(q, player);
-  startTimer(10, () => handleAnswer('TIMEOUT', q.correct, null, q, player));
 
-  gameState.questionCount++;
+  const qa = $('questionArea');
+  const oa = $('optionsArea');
+
+  // fade-out da pergunta atual
+  qa.classList.add('fade-out-question');
+  oa.classList.add('fade-out-question');
+
+  setTimeout(() => {
+    // limpa conteúdo antigo
+    qa.innerHTML = '';
+    oa.innerHTML = '';
+
+    // renderiza a próxima pergunta
+    renderQuestion(q, player);
+
+    // fade-in
+    qa.classList.remove('fade-out-question');
+    oa.classList.remove('fade-out-question');
+    qa.classList.add('fade-in-question');
+    oa.classList.add('fade-in-question');
+
+    setTimeout(() => {
+      qa.classList.remove('fade-in-question');
+      oa.classList.remove('fade-in-question');
+    }, 300);
+
+    // inicia timer
+    startTimer(10, () => handleAnswer('TIMEOUT', q.correct, null, q, player));
+
+    // incrementa contador de perguntas
+    gameState.questionCount++;
+  }, 300); // espera o fade-out terminar
 }
+
+
 
 function renderQuestion(q, player) {
   const qa = $('questionArea');
@@ -135,7 +167,8 @@ function handleAnswer(selected, correct, buttonEl, q, player) {
   renderHUD();
 
   if (gameState.lives <= 0) return showScreen(SCREENS.MAP);
-  setTimeout(() => runNextQuestion(player), 1000);
+
+  setTimeout(() => runNextQuestion(player), 2200);
 }
 
 function endPhase(player) {

@@ -1,8 +1,8 @@
 // main.js
-import { loadPlayer, savePlayer, resetForNewGame } from './player.js';
+import { loadPlayer, savePlayer, resetForNewGame, LIVES_DEFAULT } from './player.js';
 import { showScreen, SCREENS } from './screens.js';
-import { renderMap } from './map.js';
-import { loadData, nextLevelByResult } from './game.js';
+import { renderMap, MAP_LEVELS } from './map.js';
+import { loadData, nextLevelByResult, getGameState, startLevel } from './game.js';
 import { $, qsa } from './utils.js';
 import { setupAvatarCarousel } from './avatarSelection.js';
 import { renderRanking, clearRanking, updateRanking } from './ranking.js';
@@ -65,6 +65,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     //Tela jogo
     $('btnQuitToMap').addEventListener('click', () => {
         if(confirm('Voltar ao mapa? Progresso atual da fase será perdido.')){
+            const initialGameState = getGameState();
+            
+            player.score = initialGameState.initialScore;
+            player.lives = initialGameState.initialLives;
+            
+            savePlayer(player);
             renderMap(player);
             showScreen(SCREENS.MAP);
         }
@@ -77,6 +83,24 @@ document.addEventListener('DOMContentLoaded', async () => {
             clearRanking();
             renderRanking();
         }
+    });
+
+    //Tela Fim de Jogo 
+    $('btnRetryLevel').addEventListener('click', () => {
+        const lastState = getGameState();
+        const levelData = MAP_LEVELS.find(lv => lv.level === lastState.level);
+        if (levelData) {
+            player.score = lastState.initialScore;
+            player.lives = LIVES_DEFAULT;
+            startLevel(levelData.level, levelData.theme, player);
+        }
+    });
+
+    $('btnGameOverToTitle').addEventListener('click', () => {
+        const lastState = getGameState();
+        player.score = lastState.initialScore;
+        player.lives = LIVES_DEFAULT;
+        showScreen(SCREENS.TITLE);
     });
 
     //Tela Result

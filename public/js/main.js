@@ -5,6 +5,7 @@ import { renderMap } from './map.js';
 import { loadData, nextLevelByResult } from './game.js';
 import { $, qsa } from './utils.js';
 import { setupAvatarCarousel } from './avatarSelection.js';
+import { renderRanking, clearRanking, updateRanking } from './ranking.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     const player = loadPlayer();
@@ -20,7 +21,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     nameInput.value = player.name || '';
     nameInput.addEventListener('input', e => {
         player.name = e.target.value.trim();
-        savePlayer(player);
         validateChar();
     });
 
@@ -41,6 +41,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     //Tela seleção de personagens
     $('btnCharContinue').addEventListener('click', () => {
         if (!player.name || !player.avatar) return;
+
+        const savedPlayerState = loadPlayer();
+        if(player.name !== savedPlayerState.name){
+            resetForNewGame(player);
+        }
+        savePlayer(player);
+        updateRanking(player);
         renderMap(player);
         showScreen(SCREENS.MAP);
     });
@@ -49,7 +56,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     //Tela Mapa
     $('btnMapBack').addEventListener('click', () => showScreen(SCREENS.CHAR));
-    $('btnOpenRanking').addEventListener('click', () => showScreen(SCREENS.RANKING));
+    $('btnOpenRanking').addEventListener('click', () => {
+        updateRanking(player);
+        renderRanking();
+        showScreen(SCREENS.RANKING);
+    });
 
     //Tela jogo
     $('btnQuitToMap').addEventListener('click', () => {
@@ -61,7 +72,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     //Tela Ranking
     $('btnRankingBack').addEventListener('click', () => showScreen(SCREENS.MAP));
-    $('btnClearRanking').addEventListener('click', () => alert("Essa funcionalidade ainda não foi feita"));
+    $('btnClearRanking').addEventListener('click', () => {
+        if (confirm('Tem certeza que deseja apagar todo o ranking? Esta ação não pode ser desfeita.')){
+            clearRanking();
+            renderRanking();
+        }
+    });
 
     //Tela Result
     $('btnResultToMap').addEventListener('click', () => {

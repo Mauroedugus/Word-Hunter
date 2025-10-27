@@ -1,4 +1,5 @@
-// player.js
+import { updateRanking } from './ranking.js';
+
 const STORAGE_KEY = 'ewh_player_v1';
 const LIVES_DEFAULT = 3;
 
@@ -27,5 +28,6 @@ export function resetForNewGame(player) {
   player.lives = LIVES_DEFAULT;
   player.score = 0;
   player.currentLevel = 1;
-  savePlayer(player);
+  player.unlocked = [1];
+  //savePlayer(player);
 }

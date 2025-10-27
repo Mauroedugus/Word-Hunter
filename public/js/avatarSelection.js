@@ -12,7 +12,6 @@ export function setupAvatarCarousel(player, onChange) {
     function updateSelection() {
       avatars.forEach((a, i) => a.classList.toggle('selected', i === current));
       player.avatar = avatars[current].dataset.key;
-      savePlayer(player);
       if (onChange) onChange(); // atualiza o botão
     }
   

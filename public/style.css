@@ -17,15 +17,14 @@
     --wrong-color2: #d90429;
     --wrong-color3: #ff0000;
   }
+
   *{box-sizing:border-box}
   html,body,#app{height:100%}
+
   body {
     margin: 0;
     font-family: 'Fredoka', system-ui, Arial, sans-serif;
-    background: 
-      linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.25)),
-      url("/assets/images/background.png") no-repeat center center fixed;
-    background-size: cover;
+    background-color: #0c1425;
     color: #e6eef6;
     display: flex;
     align-items: center;
@@ -35,7 +34,20 @@
     font-weight: 500;
     font-size: 16px;
   }
+  .bg-layer {
+    position: fixed;
+    inset: 0; /* Atalho para top, right, bottom, left = 0 */
+    z-index: -1;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
 
+  #bg-layer-1 {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.25)),
+      url("/assets/images/backgrounds/background.png");
+  }
   #titleScreen {
     margin: 70% 0 80% 0;
   }
@@ -219,7 +231,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: box-shadow 0.3s ease-out, background-color 0.3s ease-out; 
+    transition: box-shadow 0.5s ease-out, background-color 0.5s ease-out; 
   }
 
   #gameScreen.correct{
@@ -260,11 +272,11 @@
   }
   
   .fade-in {
-    animation: fadeIn 0.3s ease forwards;
+    animation: fadeIn 0.5s ease forwards;
   }
   
   .fade-out {
-    animation: fadeOut 0.3s ease forwards;
+    animation: fadeOut 0.5s ease forwards;
   }
   
   @keyframes fadeIn {
@@ -279,7 +291,7 @@
 
   .question-area, .options-area {
     opacity: 1;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
   }
   
   .fade-out-question {

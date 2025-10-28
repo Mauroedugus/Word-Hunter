@@ -1,5 +1,5 @@
 // game.js
-import { $, qsa, shuffleArray } from './utils.js';
+import { $, qsa, shuffleArray, changeBackground } from './utils.js';
 import { savePlayer } from './player.js';
 import { showScreen, SCREENS } from './screens.js';
 import { MAP_LEVELS, renderMap } from './map.js';
@@ -23,6 +23,12 @@ export async function loadData() {
 }
 
 export function startLevel(levelNumber, theme, player) {
+  const levelData = MAP_LEVELS.find(lv => lv.level === levelNumber);
+  
+  if (levelData && levelData.background){
+    changeBackground(levelData.background);
+  }
+
   gameState = {
     level: levelNumber,
     theme,

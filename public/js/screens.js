@@ -34,7 +34,7 @@ export function showScreen(screenId, fade = true) {
       qsa('.screen').forEach(s => s.classList.add('hidden'));
       next.classList.remove('hidden');
       next.classList.add('fade-in');
-      setTimeout(() => next.classList.remove('fade-in'), 300);
+      setTimeout(() => next.classList.remove('fade-in'), 500);
     },
     { once: true }
   );

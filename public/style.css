@@ -108,10 +108,33 @@
     font-weight:700;
     color:#022;
   }
+  
   .mapNode.locked{background:rgba(255,255,255,0.06);color:var(--muted);pointer-events:auto;opacity:0.6}
   .mapNode.unlocked{background:linear-gradient(180deg,var(--accent),var(--accent2));box-shadow:0 8px 18px rgba(0,0,0,0.6)}
   .mapNode:hover{transform:translateY(-6px)}
   
+  .islands {
+    width: 320px;
+    filter: drop-shadow(0 15px 6px rgba(0, 0, 0, 0.6));
+  }
+  .islands[alt="Gelo"] {
+    width: 340px;
+  }
+  .islands[alt="Sorvete"] {
+    width: 300px;
+  }
+
+  .padlock {
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    top: -45px;
+    left: 0;
+    pointer-events: none;
+    opacity: 1; /* cadeado totalmente visível */
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.8));
+  }
+
   /* game */
   #questionArea {
     margin-block: 60px 30px;

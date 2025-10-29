@@ -9,6 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div id="bg-layer-1" class="bg-layer"></div>
+  <div id="bg-layer-2" class="bg-layer hidden"></div>
+  
   <div id="app">
 
     <section id="titleScreen" class="screen">
@@ -41,42 +44,7 @@
         <h2>Escolha seu Avatar e Nome</h2>
         <div class="avatar-row">
           <button id="btnAvatarPrev">◀</button>
-          <div class="avatar" data-key="avatar_ab">
-            <img src="/assets/avatars/avatar_ab.png" alt="avatar_ab" />
-          </div>
-          <div class="avatar" data-key="avatar_ag">
-            <img src="/assets/avatars/avatar_ag.png" alt="avatar_ag" />
-          </div>
-          <div class="avatar" data-key="avatar_bb">
-            <img src="/assets/avatars/avatar_bb.png" alt="avatar_bb" />
-          </div>
-          <div class="avatar" data-key="avatar_bg">
-            <img src="/assets/avatars/avatar_bg.png" alt="avatar_bg" />
-          </div>
-          <div class="avatar" data-key="avatar_blb">
-            <img src="/assets/avatars/avatar_blb.png" alt="avatar_blb" />
-          </div>
-          <div class="avatar" data-key="avatar_blg">
-            <img src="/assets/avatars/avatar_blg.png" alt="avatar_blg" />
-          </div>
-          <div class="avatar" data-key="avatar_rb">
-            <img src="/assets/avatars/avatar_rb.png" alt="avatar_rb" />
-          </div>
-          <div class="avatar" data-key="avatar_rg">
-            <img src="/assets/avatars/avatar_rg.png" alt="avatar_rg" />
-          </div>
-          <div class="avatar" data-key="avatar_wb1">
-            <img src="/assets/avatars/avatar_wb1.png" alt="avatar_wb1" />
-          </div>
-          <div class="avatar" data-key="avatar_wb2">
-            <img src="/assets/avatars/avatar_wb2.png" alt="avatar_wb2" />
-          </div>
-          <div class="avatar" data-key="avatar_wg1">
-            <img src="/assets/avatars/avatar_wg1.png" alt="avatar_wg1" />
-          </div>
-          <div class="avatar" data-key="avatar_wg2">
-            <img src="/assets/avatars/avatar_wg2.png" alt="avatar_wg2" />
-          </div>
+          
           <button id="btnAvatarNext">▶</button>
         </div>
         <input id="playerName" type="text" maxlength="30" placeholder="Digite seu nome..." />

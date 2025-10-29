@@ -5,10 +5,10 @@ import { showScreen, SCREENS } from './screens.js';
 import { startLevel } from './game.js';
 
 export const MAP_LEVELS = [
-  { level: 1, name: 'Floresta', xPct: 25, yPct: 75, theme: 'animals' },
-  { level: 2, name: 'Gelo',  xPct: 75, yPct: 75, theme: 'colors' },
-  { level: 3, name: 'Deserto', xPct: 75, yPct: 25, theme: 'animals' },
-  { level: 4, name: 'Sorvete', xPct: 25, yPct: 25, theme: 'colors' }
+  { level: 1, name: 'Floresta', xPct: 25, yPct: 75, theme: 'animals', background: 'Bg_Floresta.png' },
+  { level: 2, name: 'Gelo',  xPct: 75, yPct: 75, theme: 'colors', background: 'Bg_Gelo.png' },
+  { level: 3, name: 'Deserto', xPct: 75, yPct: 25, theme: 'animals', background: 'Bg_Deserto.png' },
+  { level: 4, name: 'Sorvete', xPct: 25, yPct: 25, theme: 'colors', background: 'Bg_Sorvete.png' }
 ];
 
 export function renderMap(player) {

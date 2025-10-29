@@ -1,13 +1,24 @@
 // main.js
+import { preloadImages } from './preloader.js';
 import { loadPlayer, savePlayer, resetForNewGame } from './player.js';
 import { showScreen, SCREENS } from './screens.js';
 import { renderMap, MAP_LEVELS } from './map.js';
-import { loadData, nextLevelByResult, getGameState, startLevel } from './game.js';
+import { loadData, nextLevelByResult, getGameState, startLevel, clearTimer } from './game.js';
 import { $, qsa, changeBackground } from './utils.js';
 import { setupAvatarCarousel } from './avatarSelection.js';
 import { renderRanking, clearRanking, updateRanking } from './ranking.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
+    const backgroundUrls = MAP_LEVELS.map(level => `/assets/images/backgrounds/${level.background}`);
+    backgroundUrls.push('/assets/images/backgrounds/background.png');
+
+    try {
+        await preloadImages(backgroundUrls);
+        console.log('Todos os backgrounds foram pré-carregados com sucesso!');
+    } catch (error) {
+        console.error('Erro durante o pré-carregamento de imagens:', error);
+    }
+
     const player = loadPlayer();
     await loadData();
 
@@ -65,6 +76,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     //Tela jogo
     $('btnQuitToMap').addEventListener('click', () => {
         if(confirm('Voltar ao mapa? Progresso atual da fase será perdido.')){
+            clearTimer();
             const initialGameState = getGameState();
             
             player.score = initialGameState.initialScore;
@@ -72,8 +84,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             savePlayer(player);
             renderMap(player);
-            changeBackground();
-            showScreen(SCREENS.MAP);
+           changeBackground('default');
+        showScreen(SCREENS.MAP);
         }
     });
 
@@ -94,15 +106,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     $('btnGameOverToTitle').addEventListener('click', () => {
-        changeBackground();
-        showScreen(SCREENS.TITLE);
+changeBackground('default');
+    showScreen(SCREENS.TITLE);  
     });
 
     //Tela Result
     $('btnResultToMap').addEventListener('click', () => {
         renderMap(player);
-        changeBackground();
-        showScreen(SCREENS.MAP);
+        changeBackground('default');
+    showScreen(SCREENS.MAP);
     });
     
     $('btnNextPhase').addEventListener('click', () => nextLevelByResult(player));

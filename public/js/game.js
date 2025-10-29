@@ -25,10 +25,6 @@ export async function loadData() {
 export function startLevel(levelNumber, theme, player) {
   const levelData = MAP_LEVELS.find(lv => lv.level === levelNumber);
   
-  if (levelData && levelData.background){
-    changeBackground(levelData.background);
-  }
-
   gameState = {
     level: levelNumber,
     theme,
@@ -40,8 +36,13 @@ export function startLevel(levelNumber, theme, player) {
     initialScore: player.score,
     requiredToUnlock: 400 * levelNumber
   };
-  runNextQuestion(player);
+
+  if (levelData && levelData.background) {
+    changeBackground(levelData.background);
+  } 
   showScreen(SCREENS.GAME);
+
+  runNextQuestion(player);
   renderHUD();
 }
 
@@ -148,9 +149,9 @@ function startTimer(seconds, onTimeout) {
   }, 1000);
 }
 
-function clearTimer() {
+export function clearTimer() {
   if (questionTimer) clearInterval(questionTimer);
-  questionTimer = null;
+  questionTimer = null;  
 }
 
 function handleAnswer(selected, correct, buttonEl, q, player) {

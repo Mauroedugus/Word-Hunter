@@ -159,18 +159,21 @@ function handleAnswer(selected, correct, buttonEl, q, player) {
   qsa('.optionCard').forEach(c => c.style.pointerEvents = 'none');
   const isCorrect = selected === correct;
 
-  // Pegar elementos de feedback
   const feedbackEl = $('feedback');
-  const gameScreenEl = $('gameScreen');
+  const gameScreenEl = document.querySelector('#gameScreen .content');
+
+  // Reinicia animação sempre
+  gameScreenEl.classList.remove('correct', 'wrong');
+  void gameScreenEl.offsetWidth;
 
   if (isCorrect) {
     gameState.consecutiveCorrect++;
     const gained = BASE_POINTS + COMBO_BONUS * Math.max(0, gameState.consecutiveCorrect - 1);
     gameState.score += gained;
     player.score = gameState.score;
+
     if (buttonEl) buttonEl.classList.add('correct');
 
-    // Feedback de acerto
     feedbackEl.textContent = `Correto! +${gained} pontos`;
     feedbackEl.className = 'feedback correct';
     gameScreenEl.classList.add('correct');
@@ -178,54 +181,73 @@ function handleAnswer(selected, correct, buttonEl, q, player) {
   } else {
     gameState.lives--;
     player.lives = gameState.lives;
-    if (buttonEl) buttonEl.classList.add('wrong');
 
-    // Feedback de erro
+    if (buttonEl) buttonEl.classList.add('wrong');
     feedbackEl.textContent = 'Errado! -1 vida';
     feedbackEl.className = 'feedback wrong';
     gameScreenEl.classList.add('wrong');
   }
-  
+
   player.lives = Math.max(0, gameState.lives);
   gameState.lives = player.lives;
   savePlayer(player);
   renderHUD();
 
-  if (gameState.lives <= 0) return triggerGameOver(player);
-
-  setTimeout(() => runNextQuestion(player), 2200);
+  // Aguarda a animação terminar antes de seguir
+  if (gameState.lives <= 0) {
+    setTimeout(() => triggerGameOver(player), 1800); // espera 1.8s pra deixar a animação tocar
+  } else {
+    setTimeout(() => runNextQuestion(player), 2200);
+  }
 }
+
 
 function endPhase(player) {
   clearTimer();
   const required = gameState.requiredToUnlock;
   const ok = gameState.score >= required;
-  const nextLv = gameState.level+1;
+  const nextLv = gameState.level + 1;
 
-  if(ok && !player.unlocked.includes(nextLv)) player.unlocked.push(nextLv);
+  // Desbloqueia a próxima fase, se aplicável
+  if (ok && !player.unlocked.includes(nextLv)) {
+    player.unlocked.push(nextLv);
+  }
+
+  // Atualiza progresso do jogador
   player.currentLevel = gameState.level;
   player.score = gameState.score;
   player.lives = gameState.lives;
   savePlayer(player);
 
-  // result summary
+  // Mostra o resumo dos resultados
   $('resultSummary').innerHTML = `
-  <h2>${ok ? 'Fase Concluída!' : 'Fase Finalizada'}</h2>
-  <p><strong>Pontos: ${gameState.score}</strong></p>
-  <p>Você precisava de <strong>${required}</strong> pontos para desbloquear a próxima fase.</p>
-  <p>${ok ? 'Pronto para seguir para a próxima fase!' : 'Pontuação insuficiente para desbloquear a próxima fase.'}</p>
+    <h2>${ok ? 'Fase Concluída!' : 'Fase Finalizada'}</h2>
+    <p><strong>Pontos: ${gameState.score}</strong></p>
+    <p>Você precisava de <strong>${required}</strong> pontos para desbloquear a próxima fase.</p>
+    <p>${ok
+      ? 'Pronto para seguir para a próxima fase!'
+      : 'Pontuação insuficiente para desbloquear a próxima fase.'}</p>
   `;
 
-  $('btnNextPhase').style.display = (nextLv>MAP_LEVELS.length || !ok) ? 'none':'inline-block';
+  // Mostra/esconde botão de próxima fase
+  $('btnNextPhase').style.display = (nextLv > MAP_LEVELS.length || !ok)
+    ? 'none'
+    : 'inline-block';
 
-  // *** NOVO: Limpa as classes de animação ANTES de trocar de tela ***
-  // Isso previne o conflito de animação que estava "travando" o jogo.
-  $('gameScreen').classList.remove('correct', 'wrong');
-  $('feedback').className = 'feedback';
-  $('feedback').textContent = '';
-  
+  // ✅ Remove corretamente as classes de animação
+  const gameCard = document.querySelector('#gameScreen .content');
+  if (gameCard) gameCard.classList.remove('correct', 'wrong');
+
+  const feedback = document.getElementById('feedback');
+  if (feedback) {
+    feedback.className = 'feedback';
+    feedback.textContent = '';
+  }
+
+  // Mostra a tela de resultado
   showScreen(SCREENS.RESULT);
 }
+
 
 export function nextLevelByResult(player) {
   const nextLevel = gameState.level + 1;
@@ -241,9 +263,22 @@ export function nextLevelByResult(player) {
 
 function triggerGameOver(player) {
   clearTimer();
-  $('gameOverScore').textContent = player.score; 
+
+  // Remove classes de animação pra não “herdar” o efeito
+  const gameScreenEl = document.querySelector('#gameScreen .content');
+  const feedbackEl = $('feedback');
+  if (gameScreenEl) gameScreenEl.classList.remove('correct', 'wrong');
+  if (feedbackEl) {
+    feedbackEl.className = 'feedback';
+    feedbackEl.textContent = '';
+  }
+
+  $('gameOverScore').textContent = player.score;
+
+  // Reset básico do jogador
   player.lives = LIVES_DEFAULT;
   player.score = gameState.initialScore;
   savePlayer(player);
+
   showScreen(SCREENS.GAME_OVER);
 }

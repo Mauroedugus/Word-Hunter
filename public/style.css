@@ -92,7 +92,7 @@
   input#playerName{padding:10px 12px;border-radius:10px;border:2px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:inherit;width:260px;text-align:center}
   
   .mapHeader{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-  .mapAvatar{width:200px;height:200px;border-radius:10px;object-fit:cover}
+  .mapAvatar{width:200px;height:198px;border-radius:10px;object-fit:cover}
   .hud{display:flex;gap:18px;align-items:center}
   
   .mapWrap{position:relative;width:100%;height:420px;border-radius:12px;overflow:hidden;background:rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center}
@@ -114,15 +114,34 @@
   .mapNode:hover{transform:translateY(-6px)}
   
   .islands {
-    width: 320px;
+    width: 350px;
     filter: drop-shadow(0 15px 6px rgba(0, 0, 0, 0.6));
   }
-  .islands[alt="Gelo"] {
-    width: 340px;
+
+  .tooltip {
+    position: fixed;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.85));
+    color: #fff;
+    padding: 10px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -100%) scale(0.95);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 9999;
+    white-space: nowrap;
+    backdrop-filter: blur(6px);
   }
-  .islands[alt="Sorvete"] {
-    width: 300px;
+  
+  .tooltip.visible {
+    opacity: 1;
+    transform: translate(-50%, 250%) scale(1);
   }
+  
 
   .padlock {
     position: absolute;
@@ -141,6 +160,7 @@
   }
   #questionArea img {
     max-width: 100%; 
+    border-radius: 10px ;
     max-height: 280px;   
     object-fit: contain; 
 }

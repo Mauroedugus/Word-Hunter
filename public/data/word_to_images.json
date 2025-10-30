@@ -144,7 +144,7 @@
         "options": [
           "/assets/images/animals/tiger.png",
           "/assets/images/animals/lion.png",
-          "/assets/images/animals/leopard.png"
+          "/assets/images/animals/bird.png"
         ]
       },
       {
@@ -161,7 +161,7 @@
         "correct": "/assets/images/animals/frog.png",
         "options": [
           "/assets/images/animals/frog.png",
-          "/assets/images/animals/toad.png",
+          "/assets/images/animals/goat.png",
           "/assets/images/animals/fish.png"
         ]
       },
@@ -171,7 +171,7 @@
         "options": [
           "/assets/images/animals/duck.png",
           "/assets/images/animals/chicken.png",
-          "/assets/images/animals/goose.png"
+          "/assets/images/animals/frog.png"
         ]
       },
       {

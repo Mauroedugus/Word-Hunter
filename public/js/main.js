@@ -84,8 +84,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             savePlayer(player);
             renderMap(player);
-           changeBackground('default');
-        showScreen(SCREENS.MAP);
+            changeBackground('default');
+            showScreen(SCREENS.MAP);
         }
     });
 
@@ -106,15 +106,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     $('btnGameOverToTitle').addEventListener('click', () => {
-changeBackground('default');
-    showScreen(SCREENS.TITLE);  
+        changeBackground('default');
+        showScreen(SCREENS.TITLE);  
     });
 
     //Tela Result
     $('btnResultToMap').addEventListener('click', () => {
         renderMap(player);
         changeBackground('default');
-    showScreen(SCREENS.MAP);
+        showScreen(SCREENS.MAP);
     });
     
     $('btnNextPhase').addEventListener('click', () => nextLevelByResult(player));

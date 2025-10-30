@@ -318,7 +318,7 @@
         "correct": "/assets/images/foods/hamburger.png",
         "options": [
           "/assets/images/foods/hamburger.png",
-          "/assets/images/foods/hot_dog.png",
+          "/assets/images/foods/sandwich.png",
           "/assets/images/foods/pizza.png"
         ]
       },
@@ -328,7 +328,7 @@
         "options": [
           "/assets/images/foods/ice_cream.png",
           "/assets/images/foods/cake.png",
-          "/assets/images/foods/cookie.png"
+          "/assets/images/foods/milk.png"
         ]
       },
       {
@@ -337,7 +337,7 @@
         "options": [
           "/assets/images/foods/cake.png",
           "/assets/images/foods/ice_cream.png",
-          "/assets/images/foods/cookie.png"
+          "/assets/images/foods/apple.png"
         ]
       },
       {

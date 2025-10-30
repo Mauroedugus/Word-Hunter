@@ -1,5 +1,5 @@
 // game.js
-import { $, qsa, shuffleArray } from './utils.js';
+import { $, qsa, shuffleArray, changeBackground } from './utils.js';
 import { savePlayer } from './player.js';
 import { showScreen, SCREENS } from './screens.js';
 import { MAP_LEVELS, renderMap } from './map.js';
@@ -23,6 +23,8 @@ export async function loadData() {
 }
 
 export function startLevel(levelNumber, theme, player) {
+  const levelData = MAP_LEVELS.find(lv => lv.level === levelNumber);
+  
   gameState = {
     level: levelNumber,
     theme,
@@ -34,8 +36,13 @@ export function startLevel(levelNumber, theme, player) {
     initialScore: player.score,
     requiredToUnlock: 400 * levelNumber
   };
-  runNextQuestion(player);
+
+  if (levelData && levelData.background) {
+    changeBackground(levelData.background);
+  } 
   showScreen(SCREENS.GAME);
+
+  runNextQuestion(player);
   renderHUD();
 }
 
@@ -78,19 +85,17 @@ function runNextQuestion(player) {
     qa.innerHTML = '';
     oa.innerHTML = '';
 
+    // Limpar feedback anterior
+    $('feedback').textContent = '';
+    $('feedback').className = 'feedback';
+    $('gameScreen').classList.remove('correct', 'wrong');
+
     // renderiza a próxima pergunta
     renderQuestion(q, player);
 
     // fade-in
     qa.classList.remove('fade-out-question');
     oa.classList.remove('fade-out-question');
-    qa.classList.add('fade-in-question');
-    oa.classList.add('fade-in-question');
-
-    setTimeout(() => {
-      qa.classList.remove('fade-in-question');
-      oa.classList.remove('fade-in-question');
-    }, 300);
 
     // inicia timer
     startTimer(10, () => handleAnswer('TIMEOUT', q.correct, null, q, player));
@@ -144,9 +149,9 @@ function startTimer(seconds, onTimeout) {
   }, 1000);
 }
 
-function clearTimer() {
+export function clearTimer() {
   if (questionTimer) clearInterval(questionTimer);
-  questionTimer = null;
+  questionTimer = null;  
 }
 
 function handleAnswer(selected, correct, buttonEl, q, player) {
@@ -154,17 +159,33 @@ function handleAnswer(selected, correct, buttonEl, q, player) {
   qsa('.optionCard').forEach(c => c.style.pointerEvents = 'none');
   const isCorrect = selected === correct;
 
+  // Pegar elementos de feedback
+  const feedbackEl = $('feedback');
+  const gameScreenEl = $('gameScreen');
+
   if (isCorrect) {
     gameState.consecutiveCorrect++;
     const gained = BASE_POINTS + COMBO_BONUS * Math.max(0, gameState.consecutiveCorrect - 1);
     gameState.score += gained;
     player.score = gameState.score;
     if (buttonEl) buttonEl.classList.add('correct');
+
+    // Feedback de acerto
+    feedbackEl.textContent = `Correto! +${gained} pontos`;
+    feedbackEl.className = 'feedback correct';
+    gameScreenEl.classList.add('correct');
+
   } else {
     gameState.lives--;
     player.lives = gameState.lives;
     if (buttonEl) buttonEl.classList.add('wrong');
+
+    // Feedback de erro
+    feedbackEl.textContent = 'Errado! -1 vida';
+    feedbackEl.className = 'feedback wrong';
+    gameScreenEl.classList.add('wrong');
   }
+  
   player.lives = Math.max(0, gameState.lives);
   gameState.lives = player.lives;
   savePlayer(player);
@@ -196,6 +217,13 @@ function endPhase(player) {
   `;
 
   $('btnNextPhase').style.display = (nextLv>MAP_LEVELS.length || !ok) ? 'none':'inline-block';
+
+  // *** NOVO: Limpa as classes de animação ANTES de trocar de tela ***
+  // Isso previne o conflito de animação que estava "travando" o jogo.
+  $('gameScreen').classList.remove('correct', 'wrong');
+  $('feedback').className = 'feedback';
+  $('feedback').textContent = '';
+  
   showScreen(SCREENS.RESULT);
 }
 
@@ -219,4 +247,3 @@ function triggerGameOver(player) {
   savePlayer(player);
   showScreen(SCREENS.GAME_OVER);
 }
-

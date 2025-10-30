@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>English Word Hunter</title>
   <link rel="stylesheet" href="style.css" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div id="bg-layer-1" class="bg-layer"></div>
+  <div id="bg-layer-2" class="bg-layer hidden"></div>
+  
   <div id="app">
 
-    <!-- Title Screen -->
     <section id="titleScreen" class="screen">
       <div id="titleCard" class="content card">
         <h1>WORD HUNTER</h1>
@@ -22,7 +26,6 @@
       </div>
     </section>
 
-    <!-- How to Play -->
     <section id="howScreen" class="screen hidden">
       <div class="content card">
         <h2>Como Jogar</h2>
@@ -36,7 +39,6 @@
       </div>
     </section>
 
-    <!-- Character selection -->
     <section id="charScreen" class="screen hidden">
       <div class="content card">
         <h2>Escolha seu Avatar e Nome</h2>
@@ -94,7 +96,6 @@
       </div>
     </section>
 
-    <!-- Map -->
     <section id="mapScreen" class="screen hidden">
       <div class="content card map-card">
         <h2>Mapa de Fases</h2>
@@ -125,7 +126,6 @@
       </div>
     </section>
 
-    <!-- Game -->
     <section id="gameScreen" class="screen hidden">
       <div class="content card game-card">
         <div class="game-topbar">
@@ -135,15 +135,15 @@
           <div id="livesGameTopbar">Vidas: <span id="gameLives">3</span></div>
         </div>
 
+        <div id="particles"></div>
+        
         <div id="instructionArea"></div>
 
         <div id="questionArea" class="question-area">
-          <!-- question rendered here -->
-        </div>
+          </div>
 
         <div id="optionsArea" class="options-area">
-          <!-- options rendered here -->
-        </div>
+          </div>
 
         <div id="feedback" class="feedback"></div>
 
@@ -153,7 +153,6 @@
       </div>
     </section>
 
-    <!-- Game Over -->
     <section id="gameOverScreen" class="screen hidden">
       <div class="content card">
         <h2>Fim de Jogo</h2>
@@ -166,7 +165,6 @@
       </div>
     </section>
 
-    <!-- Result / Phase cleared -->
     <section id="resultScreen" class="screen hidden">
       <div class="content card">
         <h2>Resultado da Fase</h2>
@@ -178,7 +176,6 @@
       </div>
     </section>
 
-    <!-- Ranking -->
     <section id="rankingScreen" class="screen hidden">
       <div class="content card">
         <h2>Ranking Local</h2>

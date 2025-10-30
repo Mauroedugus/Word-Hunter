@@ -44,7 +44,48 @@
         <h2>Escolha seu Avatar e Nome</h2>
         <div class="avatar-row">
           <button id="btnAvatarPrev">◀</button>
-          
+          <div class="avatar" data-key="avatar1">
+            <img src="/assets/avatars/avatar1.png" alt="avatar1" />
+          </div>
+          <div class="avatar" data-key="avatar2">
+            <img src="/assets/avatars/avatar2.png" alt="avatar2" />
+          </div>
+          <div class="avatar" data-key="avatar3">
+            <img src="/assets/avatars/avatar3.png" alt="avatar3" />
+          </div>
+          <div class="avatar" data-key="avatar4">
+            <img src="/assets/avatars/avatar4.png" alt="avatar4" />
+          </div>
+          <div class="avatar" data-key="avatar5">
+            <img src="/assets/avatars/avatar5.png" alt="avatar5" />
+          </div>
+          <div class="avatar" data-key="avatar6">
+            <img src="/assets/avatars/avatar6.png" alt="avatar6" />
+          </div>
+          <div class="avatar" data-key="avatar7">
+            <img src="/assets/avatars/avatar7.png" alt="avatar7" />
+          </div>
+          <div class="avatar" data-key="avatar8">
+            <img src="/assets/avatars/avatar8.png" alt="avatar8" />
+          </div>
+          <div class="avatar" data-key="avatar9">
+            <img src="/assets/avatars/avatar9.png" alt="avatar9" />
+          </div>
+          <div class="avatar" data-key="avatar10">
+            <img src="/assets/avatars/avatar10.png" alt="avatar10" />
+          </div>
+          <div class="avatar" data-key="avatar11">
+            <img src="/assets/avatars/avatar11.png" alt="avatar11" />
+          </div>
+          <div class="avatar" data-key="avatar12">
+            <img src="/assets/avatars/avatar12.png" alt="avatar12" />
+          </div>
+          <div class="avatar" data-key="avatar13">
+            <img src="/assets/avatars/avatar13.png" alt="avatar13" />
+          </div>
+          <div class="avatar" data-key="avatar14">
+            <img src="/assets/avatars/avatar14.png" alt="avatar14" />
+          </div>
           <button id="btnAvatarNext">▶</button>
         </div>
         <input id="playerName" type="text" maxlength="30" placeholder="Digite seu nome..." />
@@ -60,7 +101,7 @@
         <h2>Mapa de Fases</h2>
         <div class="map-top-row">
           <div class="player-info">
-            <img id="playerAvatarSmall" class="mapAvatar" src="/assets/avatars/gustavo.jpg" alt="avatar" />
+            <img id="playerAvatarSmall" class="mapAvatar" src="" alt="avatar" />
             <div>
               <div id="playerNameLabel">Nome</div>
               <div id="playerLevelLabel">Nível 1</div>
@@ -73,7 +114,10 @@
         </div>
 
         <div id="mapArea" class="map-area">
-          </div>
+          <!-- Zones will be injected here -->
+        </div>
+
+        <div id="mapTooltip" class="tooltip"></div>
 
         <div class="row">
           <button id="btnMapBack">Voltar ao Menu</button>

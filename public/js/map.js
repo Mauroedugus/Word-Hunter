@@ -4,11 +4,13 @@ import { savePlayer } from './player.js';
 import { showScreen, SCREENS } from './screens.js';
 import { startLevel } from './game.js';
 
+const tooltip = document.getElementById('mapTooltip');
+
 export const MAP_LEVELS = [
-  { level: 1, name: 'Floresta', xPct: 25, yPct: 75, theme: 'animals', background: 'Bg_Floresta.png' },
-  { level: 2, name: 'Gelo',  xPct: 75, yPct: 75, theme: 'colors', background: 'Bg_Gelo.png' },
-  { level: 3, name: 'Deserto', xPct: 75, yPct: 25, theme: 'animals', background: 'Bg_Deserto.png' },
-  { level: 4, name: 'Sorvete', xPct: 25, yPct: 25, theme: 'colors', background: 'Bg_Sorvete.png' }
+  { level: 1, name: 'Ilha das Cores', xPct: 35, yPct: 75, theme: 'animals' },
+  { level: 2, name: 'Ilha dos Animais', xPct: 67, yPct: 65, theme: 'colors' },
+  { level: 3, name: 'Ilha dos Números', xPct: 75, yPct: 25, theme: 'animals' },
+  { level: 4, name: 'Ilha da Comida', xPct: 25, yPct: 30, theme: 'colors' }
 ];
 
 export function renderMap(player) {
@@ -25,7 +27,7 @@ export function renderMap(player) {
     div.className = 'mapNode';
     div.style.left = `calc(${lv.xPct}% - 42px)`;
     div.style.top = `calc(${lv.yPct}% - 42px)`;
-    div.style.position = 'absolute'; // garante posicionamento no mapa
+    div.style.position = 'absolute';
 
     const unlocked = player.unlocked.includes(lv.level);
     div.classList.add(unlocked ? 'unlocked' : 'locked');
@@ -35,7 +37,6 @@ export function renderMap(player) {
     island.className = 'islands';
     island.src = `/assets/images/map/${lv.name}.png`;
     island.alt = lv.name;
-
     div.appendChild(island);
 
     // cadeado só se bloqueado
@@ -47,7 +48,22 @@ export function renderMap(player) {
       div.appendChild(padlock);
     }
 
-    div.title = lv.name + (unlocked ? '' : ' (Bloqueado)');
+    // --- Tooltip customizado ---
+    div.addEventListener('mouseenter', () => {
+      tooltip.textContent = unlocked ? lv.name : `${lv.name}`;
+      tooltip.classList.add('visible');
+    });
+
+    div.addEventListener('mousemove', (e) => {
+      tooltip.style.left = `${e.pageX}px`;
+      tooltip.style.top = `${e.pageY - 20}px`;
+    });
+
+    div.addEventListener('mouseleave', () => {
+      tooltip.classList.remove('visible');
+    });
+
+    // --- Clique para iniciar ---
     div.addEventListener('click', () => {
       if (!unlocked) {
         alert('Fase bloqueada. Jogue e consiga pontos para desbloquear!');

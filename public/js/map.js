@@ -7,10 +7,10 @@ import { startLevel } from './game.js';
 const tooltip = document.getElementById('mapTooltip');
 
 export const MAP_LEVELS = [
-  { level: 1, name: 'Ilha das Cores', xPct: 35, yPct: 75, theme: 'animals' },
-  { level: 2, name: 'Ilha dos Animais', xPct: 67, yPct: 65, theme: 'colors' },
-  { level: 3, name: 'Ilha dos Números', xPct: 75, yPct: 25, theme: 'animals' },
-  { level: 4, name: 'Ilha da Comida', xPct: 25, yPct: 30, theme: 'colors' }
+  { level: 1, name: 'Ilha das Cores', xPct: 35, yPct: 75, theme: 'colors',  background: 'bg_colors.png' },
+  { level: 2, name: 'Ilha dos Animais', xPct: 67, yPct: 65, theme: 'animals',  background: 'bg_animals.png' },
+  { level: 3, name: 'Ilha dos Números', xPct: 75, yPct: 25, theme: 'numbers',  background: 'bg_numbers.png' },
+  { level: 4, name: 'Ilha da Comida', xPct: 25, yPct: 30, theme: 'foods',  background: 'bg_foods.png' }
 ];
 
 export function renderMap(player) {

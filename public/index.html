@@ -67,7 +67,7 @@
           </div>
           <div class="hud">
             <div>Pontos: <span id="hudScore">0</span></div>
-            <div>Vidas: <span id="hudLives">3</span></div>
+            <div class="lives-container">Vidas: <div id="hudLives"></div></div>
           </div>
         </div>
 
@@ -90,7 +90,7 @@
           <div id="levelGameTopbar">Nivel: <span id="gameLevel">1</span></div>
           <div id="scoreGameTopbar">Pontos: <span id="gameScore">0</span></div>
           <div id="timerGameTopbar">Tempo: <span id="gameTimer">0</span>s</div>
-          <div id="livesGameTopbar">Vidas: <span id="gameLives">3</span></div>
+          <div id="lives-container"><span id="gameLives"></span></div>
         </div>
 
         <div id="particles"></div>
@@ -145,6 +145,10 @@
       </div>
     </section>
 
+    <div id="notificationTooltip" class="notification-tooltip hidden">
+      <p id="notificationMessage"></p>
+      <button id="notificationClose">OK</button>
+    </div>
   </div>
 
   <script type="module" src="/js/main.js"></script>

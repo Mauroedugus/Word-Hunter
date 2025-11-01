@@ -1,3 +1,4 @@
+import { LIVES_DEFAULT } from "./player.js";
 export const $ = id => document.getElementById(id);
 export const qsa = sel => Array.from(document.querySelectorAll(sel));
 
@@ -48,4 +49,20 @@ export function changeBackground(imageName = 'default') {
 
   currentBgLayer = currentBgLayer === 1 ? 2 : 1;
   currentBgImage = imageName;
+}
+
+export function renderLives(containerId, currentLives) {
+  const container = $(containerId);
+  if (!container) return;
+
+  container.innerHTML = ''; 
+
+  for (let i = 1; i <= LIVES_DEFAULT; i++) {
+    const iconDiv = document.createElement('div');
+    iconDiv.className = 'life-icon';
+    if (i > currentLives) {
+      iconDiv.classList.add('lost');
+    }
+    container.appendChild(iconDiv);
+  }
 }

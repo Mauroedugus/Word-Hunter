@@ -16,11 +16,11 @@
 
     <section id="titleScreen" class="screen">
       <div id="titleCard" class="content card">
-        <h1>WORD HUNTER</h1>
-        <p class="subtitle">Aprenda inglês de forma divertida</p>
+        <img src="/assets/images/title.png" alt="Título Word Hunter" id="titleImage">
+        <img src="/assets/images/subtitle.png" alt="Aprenda inglês de forma divertida" id="subtitleImage">
         <div class="title-actions">
           <button id="btnStart">COMEÇAR</button>
-          <button id="btnHow">COMO JOGAR</button>
+          <button id="btnHow">COMO JOGAR?</button>
         </div>
         <small>Feito por você — versão DOM</small>
       </div>
@@ -67,7 +67,7 @@
           </div>
           <div class="hud">
             <div>Pontos: <span id="hudScore">0</span></div>
-            <div>Vidas: <span id="hudLives">3</span></div>
+            <div class="lives-container">Vidas: <div id="hudLives"></div></div>
           </div>
         </div>
 
@@ -90,7 +90,7 @@
           <div id="levelGameTopbar">Nivel: <span id="gameLevel">1</span></div>
           <div id="scoreGameTopbar">Pontos: <span id="gameScore">0</span></div>
           <div id="timerGameTopbar">Tempo: <span id="gameTimer">0</span>s</div>
-          <div id="livesGameTopbar">Vidas: <span id="gameLives">3</span></div>
+          <div id="lives-container"><span id="gameLives"></span></div>
         </div>
 
         <div id="particles"></div>
@@ -145,6 +145,10 @@
       </div>
     </section>
 
+    <div id="notificationTooltip" class="notification-tooltip hidden">
+      <p id="notificationMessage"></p>
+      <button id="notificationClose">OK</button>
+    </div>
   </div>
 
   <script type="module" src="/js/main.js"></script>

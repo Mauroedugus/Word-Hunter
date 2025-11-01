@@ -1,5 +1,5 @@
 // game.js
-import { $, qsa, shuffleArray, changeBackground } from './utils.js';
+import { $, qsa, shuffleArray, changeBackground, renderLives } from './utils.js';
 import { savePlayer } from './player.js';
 import { showScreen, SCREENS } from './screens.js';
 import { MAP_LEVELS, renderMap } from './map.js';
@@ -49,7 +49,7 @@ export function startLevel(levelNumber, theme, player) {
 function renderHUD() {
   $('gameLevel').textContent = gameState.level;
   $('gameScore').textContent = gameState.score;
-  $('gameLives').textContent = gameState.lives;
+  renderLives('gameLives', gameState.lives);
 }
 
 function pickRandomQuestion(theme) {
@@ -192,6 +192,16 @@ function handleAnswer(selected, correct, buttonEl, q, player) {
   gameState.lives = player.lives;
   savePlayer(player);
   renderHUD();
+
+  if (isCorrect) {
+    const scoreEl = $('scoreGameTopbar');
+    scoreEl.classList.add('correct-pulse');
+
+    // Remove a classe após a animação para que possa ser usada novamente
+    setTimeout(() => {
+      scoreEl.classList.remove('correct-pulse');
+    }, 1000); // 600ms = 0.6s (a duração da animação)
+  }
 
   // Aguarda a animação terminar antes de seguir
   if (gameState.lives <= 0) {

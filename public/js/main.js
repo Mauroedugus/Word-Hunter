@@ -1,10 +1,10 @@
 // main.js
 import { preloadImages } from './preloader.js';
-import { loadPlayer, savePlayer, resetForNewGame } from './player.js';
+import { loadPlayer, savePlayer, resetForNewGame, LIVES_DEFAULT } from './player.js';
 import { showScreen, SCREENS } from './screens.js';
 import { renderMap, MAP_LEVELS } from './map.js';
 import { loadData, nextLevelByResult, getGameState, startLevel, clearTimer } from './game.js';
-import { $, qsa, changeBackground } from './utils.js';
+import { $, qsa, changeBackground, showConfirmation } from './utils.js';
 import { setupAvatarCarousel } from './avatarSelection.js';
 import { renderRanking, clearRanking, updateRanking } from './ranking.js';
 
@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         await preloadImages(backgroundUrls);
-        console.log('Todos os backgrounds foram pré-carregados com sucesso!');
     } catch (error) {
         console.error('Erro durante o pré-carregamento de imagens:', error);
     }
@@ -75,7 +74,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     //Tela jogo
     $('btnQuitToMap').addEventListener('click', () => {
-        if(confirm('Voltar ao mapa? Progresso atual da fase será perdido.')){
+        showConfirmation('Voltar ao mapa? Progresso atual da fase será perdido.', () => {
             clearTimer();
             const initialGameState = getGameState();
             
@@ -85,17 +84,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             savePlayer(player);
             renderMap(player);
             changeBackground('default');
-            showScreen(SCREENS.MAP);
-        }
+            showScreen(SCREENS.MAP);   
+        });
     });
 
     //Tela Ranking
     $('btnRankingBack').addEventListener('click', () => showScreen(SCREENS.MAP));
     $('btnClearRanking').addEventListener('click', () => {
-        if (confirm('Tem certeza que deseja apagar todo o ranking? Esta ação não pode ser desfeita.')){
+        showConfirmation('Tem certeza que deseja apagar todo o ranking? Esta ação não pode ser desfeita.', () => {
             clearRanking();
             renderRanking();
-        }
+        });
     });
 
     //Tela Fim de Jogo 
@@ -118,4 +117,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
     
     $('btnNextPhase').addEventListener('click', () => nextLevelByResult(player));
+
+    
+    window.addEventListener('keydown', (event) => {
+        const gameScreen = $('gameScreen');
+        if (gameScreen.classList.contains('hidden')) { return; }
+
+        if (event.key === 'F5' || (event.ctrlKey && event.key.toLowerCase() === 'r')) {
+            event.preventDefault();
+
+            showConfirmation(
+                'Deseja recarregar a página? Seu progresso nesta fase será perdido.',
+                () => {
+                    const player = loadPlayer();
+                    let gameState = getGameState();
+                    player.score = gameState.initialScore;
+                    player.lives = LIVES_DEFAULT;
+                    savePlayer(player);
+                    location.reload(); 
+                }
+            );
+        }
+    });
 });

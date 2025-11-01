@@ -66,3 +66,25 @@ export function renderLives(containerId, currentLives) {
     container.appendChild(iconDiv);
   }
 }
+
+export function showConfirmation(message, onConfirm) {
+  const modal = $('confirmationModal');
+  const messageEl = $('confirmationMessage');
+  const btnYes = $('btnConfirmYes');
+  const btnNo = $('btnConfirmNo');
+
+  messageEl.textContent = message;
+  modal.classList.remove('hidden');
+  modal.classList.add('fade-in');
+  setTimeout(() => modal.classList.remove('fade-in'), 300);
+  const closeModal = () => modal.classList.add('hidden');
+
+  btnYes.onclick = () => {
+    closeModal();
+    onConfirm(); 
+  };
+
+  btnNo.onclick = () => {
+    closeModal();
+  };
+}

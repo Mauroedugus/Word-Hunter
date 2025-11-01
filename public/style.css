@@ -641,7 +641,7 @@ input#playerName {
   display: flex;
   align-items: center;
   font-size: 1.1em;
-  padding: 8px 0;
+  padding: 2px 0;
   border-bottom: 1px solid #eee;
 }
 
@@ -751,8 +751,19 @@ input#playerName {
 
 .notification-tooltip p {
   margin: 0 0 20px 0;
-  font-size: 1.2em;
+  font-size: 1.5em;
   max-width: 300px;
+}
+#confirmationModal {
+  font-size: 1.2em;
+}
+#confirmationModal .row {
+  font-size: 1.2em;
+  display: flex;
+  gap: 15px; 
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
 @keyframes scorePulse {

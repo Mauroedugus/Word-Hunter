@@ -84,6 +84,18 @@ body {
 #titleCard{
   padding: 30px;
 }
+
+#titleImage {
+  max-width: 70%; 
+  height: auto;   
+  margin-bottom: 8px; 
+}
+
+#subtitleImage {
+  max-width: 70%; 
+  height: auto;   
+}
+
 .title-actions {
   display: flex;
   justify-content: space-evenly;

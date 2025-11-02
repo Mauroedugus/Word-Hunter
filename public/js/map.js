@@ -15,7 +15,7 @@ export const MAP_LEVELS = [
 
 export function renderMap(player) {
   $('playerAvatarSmall').src = player.avatar ? `assets/avatars/${player.avatar}.png` : '';
-  $('playerNameLabel').textContent = player.name ? `${player.name} (Nível ${player.currentLevel})` : '';
+  $('playerNameLabel').textContent = player.name ? `${player.name}` : '';
   $('hudScore').textContent = player.score;
   $('hudLives').textContent = player.lives;
 

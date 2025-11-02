@@ -30,7 +30,7 @@
       {
         "image": "/assets/images/colors/brown.png",
         "correct": "brown",
-        "options": ["brown", "black", "gray"]
+        "options": ["brown", "black", "silver"]
       },
       {
         "image": "/assets/images/colors/light_blue.png",
@@ -40,7 +40,7 @@
       {
         "image": "/assets/images/colors/gold.png",
         "correct": "gold",
-        "options": ["gold", "yellow", "orange"]
+        "options": ["gold", "blue", "orange"]
       },
       {
         "image": "/assets/images/colors/silver.png",
@@ -48,9 +48,9 @@
         "options": ["silver", "gray", "white"]
       },
       {
-        "image": "/assets/images/colors/beige.png",
-        "correct": "beige",
-        "options": ["beige", "white", "brown"]
+        "image": "/assets/images/colors/green.png",
+        "correct": "green",
+        "options": ["green", "white", "brown"]
       }
     ],
     "animals": [
@@ -104,6 +104,43 @@
         "correct": "duck",
         "options": ["duck", "chicken", "goose"]
       }
+<<<<<<< Updated upstream
+=======
+    ],
+    "numbers": [
+      { "image": "/assets/images/numbers/one.png", "correct": "one", "options": ["one", "two", "three"] },
+      { "image": "/assets/images/numbers/two.png", "correct": "two", "options": ["two", "four", "five"] },
+      { "image": "/assets/images/numbers/three.png", "correct": "three", "options": ["three", "six", "nine"] },
+      { "image": "/assets/images/numbers/four.png", "correct": "four", "options": ["four", "five", "six"] },
+      { "image": "/assets/images/numbers/five.png", "correct": "five", "options": ["five", "seven", "nine"] },
+      { "image": "/assets/images/numbers/six.png", "correct": "six", "options": ["six", "seven", "eight"] },
+      { "image": "/assets/images/numbers/seven.png", "correct": "seven", "options": ["seven", "eight", "ten"] },
+      { "image": "/assets/images/numbers/eight.png", "correct": "eight", "options": ["eight", "nine", "ten"] },
+      { "image": "/assets/images/numbers/nine.png", "correct": "nine", "options": ["nine", "seven", "six"] },
+      { "image": "/assets/images/numbers/ten.png", "correct": "ten", "options": ["ten", "five", "eight"] },
+      { "image": "/assets/images/numbers/eleven.png", "correct": "eleven", "options": ["eleven", "twelve", "thirteen"] },
+      { "image": "/assets/images/numbers/twelve.png", "correct": "twelve", "options": ["twelve", "ten", "fourteen"] },
+      { "image": "/assets/images/numbers/thirteen.png", "correct": "thirteen", "options": ["thirteen", "fifteen", "seventeen"] },
+      { "image": "/assets/images/numbers/fourteen.png", "correct": "fourteen", "options": ["fourteen", "twelve", "sixteen"] },
+      { "image": "/assets/images/numbers/fifteen.png", "correct": "fifteen", "options": ["fifteen", "sixteen", "seventeen"] },
+      { "image": "/assets/images/numbers/sixteen.png", "correct": "sixteen", "options": ["sixteen", "fourteen", "eighteen"] },
+      { "image": "/assets/images/numbers/seventeen.png", "correct": "seventeen", "options": ["seventeen", "fifteen", "nineteen"] },
+      { "image": "/assets/images/numbers/eighteen.png", "correct": "eighteen", "options": ["eighteen", "nineteen", "twenty"] },
+      { "image": "/assets/images/numbers/nineteen.png", "correct": "nineteen", "options": ["nineteen", "seventeen", "twenty"] },
+      { "image": "/assets/images/numbers/twenty.png", "correct": "twenty", "options": ["twenty", "eighteen", "nineteen"] }
+    ],
+    "foods": [
+      { "image": "/assets/images/foods/apple.png", "correct": "apple", "options": ["apple", "banana", "grape"] },
+      { "image": "/assets/images/foods/banana.png", "correct": "banana", "options": ["banana", "pear", "pineapple"] },
+      { "image": "/assets/images/foods/orange.png", "correct": "orange", "options": ["orange", "apple", "mango"] },
+      { "image": "/assets/images/foods/pizza.png", "correct": "pizza", "options": ["pizza", "hamburger", "sandwich"] },
+      { "image": "/assets/images/foods/hamburger.png", "correct": "hamburger", "options": ["hamburger", "hot dog", "pizza"] },
+      { "image": "/assets/images/foods/ice_cream.png", "correct": "ice cream", "options": ["ice cream", "cake", "cookie"] },
+      { "image": "/assets/images/foods/cake.png", "correct": "cake", "options": ["cake", "ice cream", "cookie"] },
+      { "image": "/assets/images/foods/salad.png", "correct": "salad", "options": ["salad", "soup", "sandwich"] },
+      { "image": "/assets/images/foods/sandwich.png", "correct": "sandwich", "options": ["sandwich", "burger", "pizza"] },
+      { "image": "/assets/images/foods/milk.png", "correct": "milk", "options": ["milk", "juice", "water"] }
+>>>>>>> Stashed changes
     ]
   }
 }

@@ -61,7 +61,7 @@
         "options": [
           "/assets/images/colors/light_blue.png",
           "/assets/images/colors/blue.png",
-          "/assets/images/colors/cyan.png"
+          "/assets/images/colors/green.png"
         ]
       },
       {
@@ -83,10 +83,10 @@
         ]
       },
       {
-        "word": "beige",
-        "correct": "/assets/images/colors/beige.png",
+        "word": "purple",
+        "correct": "/assets/images/colors/purple.png",
         "options": [
-          "/assets/images/colors/beige.png",
+          "/assets/images/colors/purple.png",
           "/assets/images/colors/white.png",
           "/assets/images/colors/brown.png"
         ]
@@ -183,6 +183,283 @@
           "/assets/images/animals/lion.png"
         ]
       }
+<<<<<<< Updated upstream
+=======
+    ],
+        "numbers": [
+      {
+        "word": "one",
+        "correct": "/assets/images/numbers/one.png",
+        "options": [
+          "/assets/images/numbers/one.png",
+          "/assets/images/numbers/two.png",
+          "/assets/images/numbers/three.png"
+        ]
+      },
+      {
+        "word": "two",
+        "correct": "/assets/images/numbers/two.png",
+        "options": [
+          "/assets/images/numbers/two.png",
+          "/assets/images/numbers/four.png",
+          "/assets/images/numbers/five.png"
+        ]
+      },
+      {
+        "word": "three",
+        "correct": "/assets/images/numbers/three.png",
+        "options": [
+          "/assets/images/numbers/three.png",
+          "/assets/images/numbers/six.png",
+          "/assets/images/numbers/nine.png"
+        ]
+      },
+      {
+        "word": "four",
+        "correct": "/assets/images/numbers/four.png",
+        "options": [
+          "/assets/images/numbers/four.png",
+          "/assets/images/numbers/five.png",
+          "/assets/images/numbers/six.png"
+        ]
+      },
+      {
+        "word": "five",
+        "correct": "/assets/images/numbers/five.png",
+        "options": [
+          "/assets/images/numbers/five.png",
+          "/assets/images/numbers/seven.png",
+          "/assets/images/numbers/nine.png"
+        ]
+      },
+      {
+        "word": "six",
+        "correct": "/assets/images/numbers/six.png",
+        "options": [
+          "/assets/images/numbers/six.png",
+          "/assets/images/numbers/seven.png",
+          "/assets/images/numbers/eight.png"
+        ]
+      },
+      {
+        "word": "seven",
+        "correct": "/assets/images/numbers/seven.png",
+        "options": [
+          "/assets/images/numbers/seven.png",
+          "/assets/images/numbers/eight.png",
+          "/assets/images/numbers/ten.png"
+        ]
+      },
+      {
+        "word": "eight",
+        "correct": "/assets/images/numbers/eight.png",
+        "options": [
+          "/assets/images/numbers/eight.png",
+          "/assets/images/numbers/nine.png",
+          "/assets/images/numbers/ten.png"
+        ]
+      },
+      {
+        "word": "nine",
+        "correct": "/assets/images/numbers/nine.png",
+        "options": [
+          "/assets/images/numbers/nine.png",
+          "/assets/images/numbers/seven.png",
+          "/assets/images/numbers/six.png"
+        ]
+      },
+      {
+        "word": "ten",
+        "correct": "/assets/images/numbers/ten.png",
+        "options": [
+          "/assets/images/numbers/ten.png",
+          "/assets/images/numbers/five.png",
+          "/assets/images/numbers/eight.png"
+        ]
+      },
+      {
+        "word": "eleven",
+        "correct": "/assets/images/numbers/eleven.png",
+        "options": [
+          "/assets/images/numbers/eleven.png",
+          "/assets/images/numbers/twelve.png",
+          "/assets/images/numbers/thirteen.png"
+        ]
+      },
+      {
+        "word": "twelve",
+        "correct": "/assets/images/numbers/twelve.png",
+        "options": [
+          "/assets/images/numbers/twelve.png",
+          "/assets/images/numbers/ten.png",
+          "/assets/images/numbers/fourteen.png"
+        ]
+      },
+      {
+        "word": "thirteen",
+        "correct": "/assets/images/numbers/thirteen.png",
+        "options": [
+          "/assets/images/numbers/thirteen.png",
+          "/assets/images/numbers/fifteen.png",
+          "/assets/images/numbers/seventeen.png"
+        ]
+      },
+      {
+        "word": "fourteen",
+        "correct": "/assets/images/numbers/fourteen.png",
+        "options": [
+          "/assets/images/numbers/fourteen.png",
+          "/assets/images/numbers/twelve.png",
+          "/assets/images/numbers/sixteen.png"
+        ]
+      },
+      {
+        "word": "fifteen",
+        "correct": "/assets/images/numbers/fifteen.png",
+        "options": [
+          "/assets/images/numbers/fifteen.png",
+          "/assets/images/numbers/sixteen.png",
+          "/assets/images/numbers/seventeen.png"
+        ]
+      },
+      {
+        "word": "sixteen",
+        "correct": "/assets/images/numbers/sixteen.png",
+        "options": [
+          "/assets/images/numbers/sixteen.png",
+          "/assets/images/numbers/fourteen.png",
+          "/assets/images/numbers/eighteen.png"
+        ]
+      },
+      {
+        "word": "seventeen",
+        "correct": "/assets/images/numbers/seventeen.png",
+        "options": [
+          "/assets/images/numbers/seventeen.png",
+          "/assets/images/numbers/fifteen.png",
+          "/assets/images/numbers/nineteen.png"
+        ]
+      },
+      {
+        "word": "eighteen",
+        "correct": "/assets/images/numbers/eighteen.png",
+        "options": [
+          "/assets/images/numbers/eighteen.png",
+          "/assets/images/numbers/nineteen.png",
+          "/assets/images/numbers/twenty.png"
+        ]
+      },
+      {
+        "word": "nineteen",
+        "correct": "/assets/images/numbers/nineteen.png",
+        "options": [
+          "/assets/images/numbers/nineteen.png",
+          "/assets/images/numbers/seventeen.png",
+          "/assets/images/numbers/twenty.png"
+        ]
+      },
+      {
+        "word": "twenty",
+        "correct": "/assets/images/numbers/twenty.png",
+        "options": [
+          "/assets/images/numbers/twenty.png",
+          "/assets/images/numbers/eighteen.png",
+          "/assets/images/numbers/nineteen.png"
+        ]
+      }
+    ],
+    "foods": [
+      {
+        "word": "apple",
+        "correct": "/assets/images/foods/apple.png",
+        "options": [
+          "/assets/images/foods/apple.png",
+          "/assets/images/foods/banana.png",
+          "/assets/images/foods/grape.png"
+        ]
+      },
+      {
+        "word": "banana",
+        "correct": "/assets/images/foods/banana.png",
+        "options": [
+          "/assets/images/foods/banana.png",
+          "/assets/images/foods/pear.png",
+          "/assets/images/foods/pineapple.png"
+        ]
+      },
+      {
+        "word": "orange",
+        "correct": "/assets/images/foods/orange.png",
+        "options": [
+          "/assets/images/foods/orange.png",
+          "/assets/images/foods/apple.png",
+          "/assets/images/foods/mango.png"
+        ]
+      },
+      {
+        "word": "pizza",
+        "correct": "/assets/images/foods/pizza.png",
+        "options": [
+          "/assets/images/foods/pizza.png",
+          "/assets/images/foods/hamburger.png",
+          "/assets/images/foods/sandwich.png"
+        ]
+      },
+      {
+        "word": "hamburger",
+        "correct": "/assets/images/foods/hamburger.png",
+        "options": [
+          "/assets/images/foods/hamburger.png",
+          "/assets/images/foods/sandwich.png",
+          "/assets/images/foods/pizza.png"
+        ]
+      },
+      {
+        "word": "ice cream",
+        "correct": "/assets/images/foods/ice_cream.png",
+        "options": [
+          "/assets/images/foods/ice_cream.png",
+          "/assets/images/foods/cake.png",
+          "/assets/images/foods/milk.png"
+        ]
+      },
+      {
+        "word": "cake",
+        "correct": "/assets/images/foods/cake.png",
+        "options": [
+          "/assets/images/foods/cake.png",
+          "/assets/images/foods/ice_cream.png",
+          "/assets/images/foods/apple.png"
+        ]
+      },
+      {
+        "word": "salad",
+        "correct": "/assets/images/foods/salad.png",
+        "options": [
+          "/assets/images/foods/salad.png",
+          "/assets/images/foods/soup.png",
+          "/assets/images/foods/sandwich.png"
+        ]
+      },
+      {
+        "word": "sandwich",
+        "correct": "/assets/images/foods/sandwich.png",
+        "options": [
+          "/assets/images/foods/sandwich.png",
+          "/assets/images/foods/burger.png",
+          "/assets/images/foods/pizza.png"
+        ]
+      },
+      {
+        "word": "milk",
+        "correct": "/assets/images/foods/milk.png",
+        "options": [
+          "/assets/images/foods/milk.png",
+          "/assets/images/foods/juice.png",
+          "/assets/images/foods/water.png"
+        ]
+      }
+>>>>>>> Stashed changes
     ]
   }
 }

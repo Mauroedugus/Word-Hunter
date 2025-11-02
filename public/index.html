@@ -115,7 +115,7 @@
       <div class="content card">
         <h2>Fim de Jogo</h2>
         <p>Você não tem mais vidas!</p>
-        <p class="final-score">Sua pontuação final foi: <strong id="gameOverScore">0</strong></p>
+        <p class="final-score">Sua pontuação final foi: <span id="gameOverScore">0</span></p>
         <div class="row">
           <button id="btnRetryLevel" class="primary">Tentar Novamente</button>
           <button id="btnGameOverToTitle">Voltar ao início</button>
@@ -149,6 +149,14 @@
       <p id="notificationMessage"></p>
       <button id="notificationClose">OK</button>
     </div>
+  </div>
+
+  <div id="confirmationModal" class="notification-tooltip hidden">
+      <p id="confirmationMessage"></p>
+      <div class="row">
+        <button id="btnConfirmYes" class="primary">Sim</button>
+        <button id="btnConfirmNo">Não</button>
+      </div>
   </div>
 
   <script type="module" src="/js/main.js"></script>

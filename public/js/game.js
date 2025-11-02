@@ -1,6 +1,6 @@
 // game.js
-import { $, qsa, shuffleArray, changeBackground, renderLives } from './utils.js';
-import { savePlayer } from './player.js';
+import { $, qsa, shuffleArray, changeBackground, renderLives, showConfirmation } from './utils.js';
+import { loadPlayer, savePlayer } from './player.js';
 import { showScreen, SCREENS } from './screens.js';
 import { MAP_LEVELS, renderMap } from './map.js';
 
@@ -25,6 +25,9 @@ export async function loadData() {
 export function startLevel(levelNumber, theme, player) {
   const levelData = MAP_LEVELS.find(lv => lv.level === levelNumber);
   
+  const gameScreenEl = document.querySelector('#gameScreen .content');
+  gameScreenEl.classList.remove('correct', 'wrong');
+
   gameState = {
     level: levelNumber,
     theme,

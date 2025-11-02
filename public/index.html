@@ -19,10 +19,19 @@
         <img src="/assets/images/title.png" alt="Título Word Hunter" id="titleImage">
         <img src="/assets/images/subtitle.png" alt="Aprenda inglês de forma divertida" id="subtitleImage">
         <div class="title-actions">
-          <button id="btnStart">COMEÇAR</button>
+          <button id="btnStart" class="blob-btn">
+            COMEÇAR
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </button>          
           <button id="btnHow">COMO JOGAR?</button>
         </div>
-        <small>Feito por você — versão DOM</small>
       </div>
     </section>
 
@@ -48,21 +57,31 @@
         </div>
         <input id="playerName" type="text" maxlength="30" placeholder="Digite seu nome..." />
         <div class="row">
-          <button id="btnCharContinue" class="primary disabled">Continuar</button>
-          <button id="btnCharBack">Voltar</button>
+          <button id="btnCharContinue" class="button blob-btn">
+            Continuar
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </button> 
+          <button id="btnCharBack">VOLTAR</button>
         </div>
       </div>
     </section>
 
     <section id="mapScreen" class="screen hidden">
       <div class="content card map-card">
-        <h2>Mapa de Fases</h2>
+        <h2>Selecione Uma Fase</h2>
         <div class="map-top-row">
           <div class="player-info">
             <img id="playerAvatarSmall" class="mapAvatar" src="" alt="avatar" />
             <div>
-              <div id="playerNameLabel">Nome</div>
-              <div id="playerLevelLabel">Nível 1</div>
+              <div id="playerNameLabel">NOME</div>
+              <div id="playerLevelLabel">NÍVEL 1</div>
             </div>
           </div>
           <div class="hud">
@@ -78,8 +97,8 @@
         <div id="mapTooltip" class="tooltip"></div>
 
         <div class="row">
-          <button id="btnMapBack">Voltar ao Menu</button>
-          <button id="btnOpenRanking">Ranking</button>
+          <button id="btnMapBack">VOLTAR AO MENU</button>
+          <button id="btnOpenRanking">RANKING</button>
         </div>
       </div>
     </section>
@@ -144,8 +163,7 @@
         </div>
       </div>
     </section>
-
-    <div id="notificationTooltip" class="notification-tooltip hidden">
+  <div id="notificationTooltip" class="notification-tooltip hidden">
       <p id="notificationMessage"></p>
       <button id="notificationClose">OK</button>
     </div>
@@ -160,5 +178,16 @@
   </div>
 
   <script type="module" src="/js/main.js"></script>
+
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+        <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+      </filter>
+    </defs>
+  </svg>
+  
 </body>
 </html>

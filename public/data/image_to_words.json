@@ -30,7 +30,7 @@
       {
         "image": "/assets/images/colors/brown.png",
         "correct": "brown",
-        "options": ["brown", "black", "gray"]
+        "options": ["brown", "black", "silver"]
       },
       {
         "image": "/assets/images/colors/black.png",
@@ -40,7 +40,7 @@
       {
         "image": "/assets/images/colors/gold.png",
         "correct": "gold",
-        "options": ["gold", "yellow", "orange"]
+        "options": ["gold", "blue", "orange"]
       },
       {
         "image": "/assets/images/colors/silver.png",
@@ -104,7 +104,7 @@
         "correct": "duck",
         "options": ["duck", "chicken", "goose"]
       }
-    ],
+    ]
     "numbers": [
       { "image": "/assets/images/numbers/one.png", "correct": "one", "options": ["one", "two", "three"] },
       { "image": "/assets/images/numbers/two.png", "correct": "two", "options": ["two", "four", "five"] },
@@ -128,7 +128,6 @@
       { "image": "/assets/images/foods/salad.png", "correct": "salad", "options": ["salad", "soup", "sandwich"] },
       { "image": "/assets/images/foods/sandwich.png", "correct": "sandwich", "options": ["sandwich", "burger", "pizza"] },
       { "image": "/assets/images/foods/milk.png", "correct": "milk", "options": ["milk", "juice", "water"] }
-    ]
   }
 }
 

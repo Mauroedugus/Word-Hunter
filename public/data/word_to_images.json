@@ -61,7 +61,7 @@
         "options": [
           "/assets/images/colors/white.png",
           "/assets/images/colors/blue.png",
-          "/assets/images/colors/yellow.png"
+          "/assets/images/colors/green.png"
         ]
       },
       {
@@ -183,7 +183,7 @@
           "/assets/images/animals/lion.png"
         ]
       }
-    ],
+    ]
     "numbers": [
       {
         "word": "one",
@@ -367,7 +367,6 @@
           "/assets/images/foods/water.png"
         ]
       }
-    ]
   }
 }
 

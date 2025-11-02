@@ -33,9 +33,9 @@
         "options": ["brown", "black", "gray"]
       },
       {
-        "image": "/assets/images/colors/light_blue.png",
-        "correct": "light blue",
-        "options": ["light blue", "blue", "cyan"]
+        "image": "/assets/images/colors/black.png",
+        "correct": "black",
+        "options": ["black", "blue", "gray"]
       },
       {
         "image": "/assets/images/colors/gold.png",
@@ -48,9 +48,9 @@
         "options": ["silver", "gray", "white"]
       },
       {
-        "image": "/assets/images/colors/beige.png",
-        "correct": "beige",
-        "options": ["beige", "white", "brown"]
+        "image": "/assets/images/colors/green.png",
+        "correct": "green",
+        "options": ["green", "white", "brown"]
       }
     ],
     "animals": [

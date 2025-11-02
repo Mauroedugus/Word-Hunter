@@ -56,12 +56,12 @@
         ]
       },
       {
-        "word": "light blue",
-        "correct": "/assets/images/colors/light_blue.png",
+        "word": "white",
+        "correct": "/assets/images/colors/white.png",
         "options": [
-          "/assets/images/colors/light_blue.png",
+          "/assets/images/colors/white.png",
           "/assets/images/colors/blue.png",
-          "/assets/images/colors/cyan.png"
+          "/assets/images/colors/yellow.png"
         ]
       },
       {
@@ -78,15 +78,15 @@
         "correct": "/assets/images/colors/silver.png",
         "options": [
           "/assets/images/colors/silver.png",
-          "/assets/images/colors/white.png",
+          "/assets/images/colors/gold.png",
           "/assets/images/colors/gray.png"
         ]
       },
       {
-        "word": "beige",
-        "correct": "/assets/images/colors/beige.png",
+        "word": "purple",
+        "correct": "/assets/images/colors/purple.png",
         "options": [
-          "/assets/images/colors/beige.png",
+          "/assets/images/colors/purple.png",
           "/assets/images/colors/white.png",
           "/assets/images/colors/brown.png"
         ]

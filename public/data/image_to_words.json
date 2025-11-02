@@ -105,6 +105,29 @@
         "options": ["duck", "chicken", "goose"]
       }
     ]
+    "numbers": [
+      { "image": "/assets/images/numbers/one.png", "correct": "one", "options": ["one", "two", "three"] },
+      { "image": "/assets/images/numbers/two.png", "correct": "two", "options": ["two", "four", "five"] },
+      { "image": "/assets/images/numbers/three.png", "correct": "three", "options": ["three", "six", "nine"] },
+      { "image": "/assets/images/numbers/four.png", "correct": "four", "options": ["four", "five", "six"] },
+      { "image": "/assets/images/numbers/five.png", "correct": "five", "options": ["five", "seven", "nine"] },
+      { "image": "/assets/images/numbers/six.png", "correct": "six", "options": ["six", "seven", "eight"] },
+      { "image": "/assets/images/numbers/seven.png", "correct": "seven", "options": ["seven", "eight", "ten"] },
+      { "image": "/assets/images/numbers/eight.png", "correct": "eight", "options": ["eight", "nine", "ten"] },
+      { "image": "/assets/images/numbers/nine.png", "correct": "nine", "options": ["nine", "seven", "six"] },
+      { "image": "/assets/images/numbers/ten.png", "correct": "ten", "options": ["ten", "five", "eight"] }
+    ],
+    "foods": [
+      { "image": "/assets/images/foods/apple.png", "correct": "apple", "options": ["apple", "banana", "grape"] },
+      { "image": "/assets/images/foods/banana.png", "correct": "banana", "options": ["banana", "pear", "pineapple"] },
+      { "image": "/assets/images/foods/orange.png", "correct": "orange", "options": ["orange", "apple", "mango"] },
+      { "image": "/assets/images/foods/pizza.png", "correct": "pizza", "options": ["pizza", "hamburger", "sandwich"] },
+      { "image": "/assets/images/foods/hamburger.png", "correct": "hamburger", "options": ["hamburger", "hot dog", "pizza"] },
+      { "image": "/assets/images/foods/ice_cream.png", "correct": "ice cream", "options": ["ice cream", "cake", "cookie"] },
+      { "image": "/assets/images/foods/cake.png", "correct": "cake", "options": ["cake", "ice cream", "cookie"] },
+      { "image": "/assets/images/foods/salad.png", "correct": "salad", "options": ["salad", "soup", "sandwich"] },
+      { "image": "/assets/images/foods/sandwich.png", "correct": "sandwich", "options": ["sandwich", "burger", "pizza"] },
+      { "image": "/assets/images/foods/milk.png", "correct": "milk", "options": ["milk", "juice", "water"] }
   }
 }
 

@@ -1,5 +1,5 @@
 // map.js
-import { $, qsa } from './utils.js';
+import { $, qsa, renderLives } from './utils.js';
 import { savePlayer } from './player.js';
 import { showScreen, SCREENS } from './screens.js';
 import { startLevel } from './game.js';
@@ -7,17 +7,17 @@ import { startLevel } from './game.js';
 const tooltip = document.getElementById('mapTooltip');
 
 export const MAP_LEVELS = [
-  { level: 1, name: 'Ilha das Cores', xPct: 35, yPct: 75, theme: 'animals' },
-  { level: 2, name: 'Ilha dos Animais', xPct: 67, yPct: 65, theme: 'colors' },
-  { level: 3, name: 'Ilha dos Números', xPct: 75, yPct: 25, theme: 'animals' },
-  { level: 4, name: 'Ilha da Comida', xPct: 25, yPct: 30, theme: 'colors' }
+  { level: 1, name: 'Ilha das Cores', xPct: 35, yPct: 75, theme: 'colors',  background: 'bg_colors.png' },
+  { level: 2, name: 'Ilha dos Animais', xPct: 67, yPct: 65, theme: 'animals',  background: 'bg_animals.png' },
+  { level: 3, name: 'Ilha dos Números', xPct: 75, yPct: 25, theme: 'numbers',  background: 'bg_numbers.png' },
+  { level: 4, name: 'Ilha da Comida', xPct: 25, yPct: 30, theme: 'foods',  background: 'bg_foods.png' }
 ];
 
 export function renderMap(player) {
   $('playerAvatarSmall').src = player.avatar ? `assets/avatars/${player.avatar}.png` : '';
   $('playerNameLabel').textContent = player.name ? `${player.name}` : '';
   $('hudScore').textContent = player.score;
-  $('hudLives').textContent = player.lives;
+  renderLives('hudLives', player.lives);
 
   const container = $('mapArea');
   container.innerHTML = '';
@@ -66,7 +66,8 @@ export function renderMap(player) {
     // --- Clique para iniciar ---
     div.addEventListener('click', () => {
       if (!unlocked) {
-        alert('Fase bloqueada. Jogue e consiga pontos para desbloquear!');
+        const requiredPoints = (lv.level - 1) * 400; 
+        showNotification(`Fase bloqueada! Você precisa de ${requiredPoints} pontos para desbloquear.`);
         return;
       }
       startLevel(lv.level, lv.theme, player);
@@ -74,4 +75,17 @@ export function renderMap(player) {
 
     container.appendChild(div);
   });
+}
+
+function showNotification(message) {
+  const tooltip = $('notificationTooltip');
+  const messageEl = $('notificationMessage');
+  const closeBtn = $('notificationClose');
+
+  messageEl.textContent = message;
+  tooltip.classList.remove('hidden');
+
+  closeBtn.onclick = () => {
+    tooltip.classList.add('hidden');
+  };
 }

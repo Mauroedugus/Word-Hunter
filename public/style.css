@@ -88,6 +88,18 @@ body {
 #titleCard{
   padding: 30px;
 }
+
+#titleImage {
+  max-width: 70%; 
+  height: auto;   
+  margin-bottom: 8px; 
+}
+
+#subtitleImage {
+  max-width: 70%; 
+  height: auto;   
+}
+
 .title-actions {
   display: flex;
   justify-content: space-evenly;
@@ -377,6 +389,14 @@ input#playerName::placeholder {
   margin-bottom: 12px
 }
 
+.player-info {
+  display: flex;
+  flex-direction: column; /* Organiza os itens um em cima do outro */
+  align-items: center;   /* Centraliza horizontalmente */
+  gap: 12px;             /* Adiciona um espaço entre o avatar e o texto */
+  text-align: center;    /* Centraliza o texto do nome e nível */
+}
+
 .mapAvatar {
   width: 200px;
   height: 198px;
@@ -517,6 +537,7 @@ input#playerName::placeholder {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  align-items: center;
 }
 
 .game-topbar div {
@@ -532,12 +553,38 @@ input#playerName::placeholder {
   left: 15%;
 }
 
+#scoreGameTopbar.correct-pulse {
+  animation: scorePulse 0.6s ease-out;
+}
+
 #timerGameTopbar {
   left: 45%;
 }
 
-#livesGameTopbar {
-  left: 85%;
+.lives-container {
+  display: flex;
+  align-items: center;
+}
+
+
+#hudLives,
+#gameLives {
+  display: flex; 
+  gap: 4px; 
+}
+
+.life-icon {
+  width: 28px;  
+  height: 28px; 
+  background-image: url('/assets/images/heart.png'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.life-icon.lost {
+  opacity: 0.25;
+  transform: scale(0.9); 
 }
 
 #gameScreen {
@@ -704,8 +751,8 @@ input#playerName::placeholder {
 #rankingList li {
   display: flex;
   align-items: center;
-  font-size: 1.1em;
-  padding: 8px 0;
+  font-size: 2em;
+  padding: 2px 0;
   border-bottom: 1px solid #eee;
 }
 
@@ -714,8 +761,8 @@ input#playerName::placeholder {
 }
 
 .ranking-avatar {
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   margin-right: 15px;
   object-fit: cover;
@@ -796,4 +843,52 @@ input#playerName::placeholder {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+.notification-tooltip {
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--card);
+  color: #e6eef6;
+  padding: 25px 35px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+  z-index: 100; 
+  text-align: center;
+  border: 1px solid var(--glass);
+}
+
+.notification-tooltip p {
+  margin: 0 0 20px 0;
+  font-size: 1.5em;
+  max-width: 300px;
+}
+#confirmationModal {
+  font-size: 1.2em;
+}
+#confirmationModal .row {
+  font-size: 1.2em;
+  display: flex;
+  gap: 15px; 
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+@keyframes scorePulse {
+  50% {
+    transform: scale(1.25);
+    color: var(--accent2);
+    text-shadow: 0 0 12px rgba(79, 209, 197, 0.8);
+  }
+}
+
+#gameOverScreen p {
+  font-size: 2em;
+}
+
+#gameOverScore {
+  color: yellow;
 }

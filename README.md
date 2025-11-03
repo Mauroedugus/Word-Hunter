@@ -1,6 +1,6 @@
 # Word Hunter
 
-Um jogo web divertido com foco no publico infantil, onde são exibidos palavaras e imagens para que sejam relacionadas.
+Um jogo web divertido com foco no público infantil, onde são exibidos palavaras e imagens para que sejam relacionadas.
 
 ## Tecnologias
 - Node.js  

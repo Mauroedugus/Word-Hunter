@@ -45,7 +45,7 @@
       {
         "image": "/assets/images/colors/silver.png",
         "correct": "silver",
-        "options": ["silver", "gray", "white"]
+        "options": ["silver", "blue", "white"]
       },
       {
         "image": "/assets/images/colors/green.png",

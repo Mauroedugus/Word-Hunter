@@ -1,13 +1,13 @@
 :root {
   --bg: #071023;
   --card: #0f1724;
-  --accent: #00b2e3;
-  --accent2: #4fd1c5;
+  --accent: #1ae300;
+  --accent2: #6dd14f;
   --muted: #9aa4b2;
   --glass: rgba(255, 255, 255, 0.03);
   /* Cores para o efeito de ACERTO */
-  --correct-color1: #00b2e3;
-  --correct-color2: #4fd1c5;
+  --correct-color1: #1ae300;
+  --correct-color2: #6dd14f;
   --correct-color3: #a8e6cf;
   --correct-color4: #dcedc1;
   /* Novas cores para o efeito de ERRO */

@@ -26,8 +26,8 @@ export function changeBackground(imageName = 'default') {
   const nextLayer = currentBgLayer === 1 ? layer2 : layer1;
   
   const gradient = 'linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.25))';
-  const defaultBgUrl = '/assets/images/backgrounds/background.png';
-  const imageUrl = imageName === 'default' ? defaultBgUrl : `/assets/images/backgrounds/${imageName}`;
+  const defaultBgUrl = 'assets/images/backgrounds/background.png';
+  const imageUrl = imageName === 'default' ? defaultBgUrl : `assets/images/backgrounds/${imageName}`;
 
   nextLayer.style.backgroundImage = `${gradient}, url("${imageUrl}")`;
   

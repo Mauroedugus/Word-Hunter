@@ -9,8 +9,8 @@ import { setupAvatarCarousel } from './avatarSelection.js';
 import { renderRanking, clearRanking, updateRanking } from './ranking.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const backgroundUrls = MAP_LEVELS.map(level => `/assets/images/backgrounds/${level.background}`);
-    backgroundUrls.push('/assets/images/backgrounds/background.png');
+    const backgroundUrls = MAP_LEVELS.map(level => `assets/images/backgrounds/${level.background}`);
+    backgroundUrls.push('assets/images/backgrounds/background.png');
 
     try {
         await preloadImages(backgroundUrls);

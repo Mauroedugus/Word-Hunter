@@ -49,7 +49,7 @@ export function renderRanking() {
 
   ranking.forEach((player, index) => {
     const li = document.createElement('li');
-    const avatarImg = `<img src="/assets/avatars/${player.avatar}.png" class="ranking-avatar" alt="Avatar">`;
+    const avatarImg = `<img src="assets/avatars/${player.avatar}.png" class="ranking-avatar" alt="Avatar">`;
     li.innerHTML = `
       ${avatarImg}
       <span class="ranking-position">${index + 1}º</span> 

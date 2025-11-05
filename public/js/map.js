@@ -35,7 +35,7 @@ export function renderMap(player) {
     // ilha sempre visível
     const island = document.createElement('img');
     island.className = 'islands';
-    island.src = `/assets/images/map/${lv.name}.png`;
+    island.src = `assets/images/map/${lv.name}.png`;
     island.alt = lv.name;
     div.appendChild(island);
 
@@ -43,7 +43,7 @@ export function renderMap(player) {
     if (!unlocked) {
       const padlock = document.createElement('img');
       padlock.className = 'padlock';
-      padlock.src = '/assets/images/map/padlock.png';
+      padlock.src = 'assets/images/map/padlock.png';
       padlock.alt = `${lv.name} padlock`;
       div.appendChild(padlock);
     }

@@ -3,7 +3,7 @@ import { $, qsa } from './utils.js';
 export async function setupAvatarCarousel(player, onChange) {
   const btnPrev = $('btnAvatarPrev');
   const btnNext = $('btnAvatarNext');
-  const avatarKeys = await fetch('/data/avatars.json').then(res => res.json());
+  const avatarKeys = await fetch('data/avatars.json').then(res => res.json());
 
   avatarKeys.forEach(key => {
     const avatarDiv = document.createElement('div');
@@ -11,7 +11,7 @@ export async function setupAvatarCarousel(player, onChange) {
     avatarDiv.dataset.key = key;
 
     const img = document.createElement('img');
-    img.src = `/assets/avatars/${key}.png`;
+    img.src = `assets/avatars/${key}.png`;
     img.alt = key;
     
     avatarDiv.appendChild(img);
